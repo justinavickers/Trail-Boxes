@@ -1,11 +1,11 @@
 {
   "boxes": [
     {
-      "address": "",
-      "date": "",
-      "itemName":"",
-      "itemCategory": "",
-      "itemQuantity": "",
+      "address": "597 Mt Springer Road, Georgia",
+      "date": "03/20/2020",
+      "itemName":"Socks",
+      "itemCategory": "Apparel",
+      "itemQuantity": "1",
       "id": 1
     }
   ],

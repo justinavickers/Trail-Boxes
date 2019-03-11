@@ -4,50 +4,56 @@ import React, { Component } from "react";
 export default class BoxForm extends Component {
   // Set initial state
   state = {
-    name: "",
+    address: "",
     date: "",
-    location: "",
+    itemName: "",
+    itemCategory: "",
+    itemQuantity: "",
     userId: ""
   };
 
+
   // Update state whenever an input field is edited
-  handleFieldChange = evt => {
+  handleFieldChange = obj => {
     const stateToChange = {};
-    stateToChange[evt.target.id] = evt.target.value;
+    stateToChange[obj.target.id] = obj.target.value;
     this.setState(stateToChange);
   }
 
-  constructNewEvent = evt => {
+  constructNewBox = evt => {
     evt.preventDefault()
-    if (this.state.name === "" && this.state.date === "" && this.state.location === "") {
+    if (this.state.address === "" && this.state.date === "" && this.state.itemName === ""
+    && this.state.itemCategory === "" && this.state.itemQuantity === "") {
       alert("Please fill out form.")
     } else {
       const object = {
-        name: this.state.name,
+        address: this.state.address,
         date: this.state.date,
-        location: this.state.location,
+        itemName: this.state.itemName,
+        itemCategory: this.state.itemCategory,
+        itemQuantity: this.state.itemQuantity,
         userId: parseInt(sessionStorage.getItem("credentials"))
       }
       console.log(object)
 
-      this.props.addEvent(object)
-        .then(() => this.props.history.push("/events"));
+      this.props.addBox(object)
+        .then(() => this.props.history.push("/boxes"));
     }
   }
 
   render() {
     return (
       <React.Fragment>
-        <form onSubmit={this.constructNewEvent} className="eventForm">
+        <form onSubmit={this.constructNewBox} className="boxForm">
           <div className="form-group">
-            <label htmlFor="eventName">Event</label>
+            <label htmlFor="eventName">Address</label>
             <input
               type="text"
               required
               className="form-control"
               onChange={this.handleFieldChange}
               id="name"
-              placeholder="Event"
+              placeholder="Address"
             />
           </div>
           <div className="form-group">
@@ -62,15 +68,36 @@ export default class BoxForm extends Component {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="location">Location</label>
+            <label htmlFor="name">Name</label>
             <input
               defaultValue=""
               className="form-control"
               onChange={this.handleFieldChange}
-              id="location"
-              placeholder="Location"
+              id="itemName"
+              placeholder="Name"
             >
-
+            </input>
+          </div>
+          <div className="form-group">
+            <label htmlFor="category">Category</label>
+            <input
+              defaultValue=""
+              className="form-control"
+              onChange={this.handleFieldChange}
+              id="itemCategory"
+              placeholder="Category"
+            >
+            </input>
+          </div>
+          <div className="form-group">
+            <label htmlFor="quantity">Quantity</label>
+            <input
+              defaultValue=""
+              className="form-control"
+              onChange={this.handleFieldChange}
+              id="itemQuantity"
+              placeholder="Quantity"
+            >
             </input>
           </div>
           <button

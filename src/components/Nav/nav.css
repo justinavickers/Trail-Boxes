@@ -1,5 +1,3 @@
-.button {
-  border-radius: 10px;
-  margin: 10px;
-  box-shadow: 1em
+.nav-pills {
+float: right;
 }

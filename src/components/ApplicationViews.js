@@ -10,7 +10,10 @@ import BoxEditForm from "./Boxes/BoxEditForm"
 
 class ApplicationViews extends Component {
   state = {
-    boxes: []
+    boxes: [],
+    itemType: [],
+    items: [],
+    users: []
   }
 
   updateBoxes = editedObject => {
@@ -38,8 +41,9 @@ class ApplicationViews extends Component {
   componentDidMount() {
 
     BoxManager.getBoxesSorted().then(boxes => this.setState({ boxes: boxes }));
-
     UserManager.getAll().then(users => this.setState({ users: users }))
+    BoxManager.getAll().then(items => this.setState({ items: items}))
+    BoxManager.getAll().then(itemType => this.setState({itemType: itemType}))
   }
 
   render() {
@@ -54,9 +58,7 @@ class ApplicationViews extends Component {
                 boxes={this.state.boxes}
                 addBoxes={this.addBoxes}
                 deleteBoxes={this.deleteBoxes}
-                updateBoxes={this.updateBoxes}
                 {...props}
-                users={this.state.users}
               />
             );
           }}
@@ -82,7 +84,6 @@ class ApplicationViews extends Component {
               <BoxEditForm
                 boxes={this.state.boxes}
                 updateBoxes={this.updateBoxes}
-                users={this.state.users}
                 {...props}
               />
             );

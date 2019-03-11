@@ -2,38 +2,40 @@ import React, { Component } from 'react'
 class BoxList extends Component {
 
     componentDidMount() {
-        console.log("componentDidMount -- EventList")
+        console.log("componentDidMount -- BoxList")
     }
 
     render() {
-        console.log("render -- EventList")
+        console.log("render -- BoxList")
         return (
           <React.Fragment>
           <div>
             <button type="button"
             className="addButton"
             onClick={() => {
-              this.props.history.push("/events/new")
+              this.props.history.push("/boxes/new")
             }}
-            >Add Event</button>
+            >Add Box</button>
           </div>
-            <section className="events">
+            <section className="boxes">
             {
-            this.props.events.map(events =>
-              <div className="event" key={events.id} >
-              <p>{events.name}</p>
-              <p>{events.date}</p>
-              <p>{events.location}</p>
+            this.props.boxes.map(boxes =>
+              <div className="box" key={boxes.id} >
+              <p>{boxes.address}</p>
+              <p>{boxes.date}</p>
+              <p>{boxes.itemName}</p>
+              <p>{boxes.itemQuantity}</p>
+              <p>{boxes.itemCategory}</p>
               <button type="button"
               className="btn btn-success"
               onClick={() => {
-                this.props.history.push(`/events/${events.id}/edit`)
+                this.props.history.push(`/boxes/${boxes.id}/edit`)
               }}
               >Edit </button>
                <button type="button"
               className="btn red-btn-success"
-              onClick={() => this.props.deleteEvent(events.id)
-                .then(() => this.props.history.push(`/events`))}
+              onClick={() => this.props.deleteBox(boxes.id)
+                .then(() => this.props.history.push(`/boxes`))}
               >Delete </button>
               </div>
               )
