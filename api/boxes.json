@@ -1,0 +1,38 @@
+{
+  "boxes": [
+    {
+      "address": "",
+      "date": "",
+      "itemName":"",
+      "itemCategory": "",
+      "itemQuantity": "",
+      "id": 1
+    }
+  ],
+
+  "users": [
+    {
+      "userName": "",
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "password": ""
+    }
+  ],
+
+  "itemType": [
+    {
+      "apparel": "",
+      "firstAid": "",
+      "gear": "",
+      "food": ""
+    }
+  ],
+
+  "items": [
+    {
+      "name": "",
+      "quantity": ""
+    }
+  ]
+}
