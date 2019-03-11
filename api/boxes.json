@@ -12,9 +12,9 @@
 
   "users": [
     {
-      "userName": "",
-      "firstName": "",
-      "lastName": "",
+      "username": "",
+      "first_name": "",
+      "last_name": "",
       "email": "",
       "password": ""
     }
