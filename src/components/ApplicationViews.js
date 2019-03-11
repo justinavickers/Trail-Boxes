@@ -31,17 +31,15 @@ class ApplicationViews extends Component {
   };
 
   deleteBoxes = id => {
-    return BoxManager.deleteAndList(id).then(boxes =>
-      this.setState({ boxes: boxes })
-    );
+    return BoxManager.deleteAndList(id)
+    .then(boxes => this.setState({ boxes: boxes }));
   };
 
   componentDidMount() {
-    debugger
     BoxManager.getAll().then(boxes => this.setState({ boxes: boxes }));
     UserManager.getAll().then(users => this.setState({ users: users }))
-    // BoxManager.getAll().then(items => this.setState({ items: items}))
-    // BoxManager.getAll().then(itemType => this.setState({itemType: itemType}))
+    BoxManager.getAll().then(items => this.setState({ items: items}))
+    BoxManager.getAll().then(itemType => this.setState({itemType: itemType}))
   }
 
   render() {

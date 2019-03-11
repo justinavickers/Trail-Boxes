@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 // import "./Event.css";
-
 export default class BoxForm extends Component {
   // Set initial state
   state = {

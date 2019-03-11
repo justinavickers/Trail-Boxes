@@ -4,7 +4,6 @@ class BoxList extends Component {
     componentDidMount() {
         console.log("componentDidMount -- BoxList")
     }
-
     render() {
         console.log("render -- BoxList")
         return (

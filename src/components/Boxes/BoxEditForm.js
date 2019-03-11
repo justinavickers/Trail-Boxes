@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import BoxManager from "../../modules/APIManager";
+import BoxManager from "../../modules/BoxManager";
 
 export default class BoxEditForm extends Component {
     // Set initial state
@@ -32,11 +32,9 @@ export default class BoxEditForm extends Component {
           itemCategory: this.state.itemCategory,
           itemQuantity: this.state.itemQuantity,
           id: this.props.match.params.boxId
-          // Make sure the employeeId is saved to the database as a number since it is a foreign key.
-          // userId: parseInt(this.state.userId)
         }
 
-        this.props.updateBox(editedObject)
+        this.props.updateBoxes(editedObject)
             .then(() => this.props.history.push("/boxes"))
     }
   }
@@ -57,7 +55,7 @@ export default class BoxEditForm extends Component {
     render() {
       return (
         <React.Fragment>
-          <form onSubmit={this.constructNewBox} className="boxForm">
+          <form onSubmit={this.updateExistingBox} className="boxForm">
             <div className="form-group">
               <label htmlFor="eventName">Address</label>
               <input
@@ -65,8 +63,9 @@ export default class BoxEditForm extends Component {
                 required
                 className="form-control"
                 onChange={this.handleFieldChange}
-                id="name"
+                id="address"
                 placeholder="Address"
+                value={this.state.address}
               />
             </div>
             <div className="form-group">
@@ -78,38 +77,42 @@ export default class BoxEditForm extends Component {
                 onChange={this.handleFieldChange}
                 id="date"
                 placeholder="Date"
+                value={this.state.date}
               />
             </div>
             <div className="form-group">
               <label htmlFor="name">Name</label>
               <input
-                defaultValue=""
+                type="text"
                 className="form-control"
                 onChange={this.handleFieldChange}
                 id="itemName"
                 placeholder="Name"
+                value={this.state.itemName}
               >
               </input>
             </div>
             <div className="form-group">
               <label htmlFor="category">Category</label>
               <input
-                defaultValue=""
+                type="text"
                 className="form-control"
                 onChange={this.handleFieldChange}
                 id="itemCategory"
                 placeholder="Category"
+                value={this.state.itemCategory}
               >
               </input>
             </div>
             <div className="form-group">
               <label htmlFor="quantity">Quantity</label>
               <input
-                defaultValue=""
+                type="text"
                 className="form-control"
                 onChange={this.handleFieldChange}
                 id="itemQuantity"
                 placeholder="Quantity"
+                value={this.state.itemQuantity}
               >
               </input>
             </div>

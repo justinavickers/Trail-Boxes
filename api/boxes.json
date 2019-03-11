@@ -2,19 +2,18 @@
   "boxes": [
     {
       "address": "597 Mt Springer Road, Georgia",
-      "date": "03/20/2020",
-      "itemName": "Socks",
+      "date": "2019-03-11",
+      "itemName": "shirt",
       "itemCategory": "Apparel",
       "itemQuantity": "1",
       "id": 1
     },
     {
-      "address": "",
+      "address": "city",
       "date": "2019-01-01",
-      "itemName": "test",
+      "itemName": "Chicken",
       "itemCategory": "food",
       "itemQuantity": "",
-      "userId": null,
       "id": 2
     },
     {
