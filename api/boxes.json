@@ -1,22 +1,22 @@
 {
   "boxes": [
     {
-      "address": "",
-      "date": "",
-      "itemName":"",
-      "itemCategory": "",
-      "itemQuantity": "",
+      "address": "597 Mt Springer Road, Georgia",
+      "date": "03/20/2020",
+      "itemName":"Socks",
+      "itemCategory": "Apparel",
+      "itemQuantity": "1",
       "id": 1
     }
   ],
 
   "users": [
     {
-      "userName": "",
-      "firstName": "",
-      "lastName": "",
-      "email": "",
-      "password": ""
+      "username": "Calm_Neptune",
+      "first_name": "Justina",
+      "last_name": "Vickers",
+      "email": "justinav38@gmail.com",
+      "password": "kiki"
     }
   ],
 
