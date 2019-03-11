@@ -19,7 +19,7 @@ class Nav extends Component {
             <Link className="nav-link" to="/map">Map</Link>
           </li>
           <li
-          className="nav-link"> {this.props.activeUser.user_name}
+          className="nav-link"> {this.props.activeUser.username}
           <button
             type="button"
             className="button"

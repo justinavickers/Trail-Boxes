@@ -3,23 +3,58 @@
     {
       "address": "597 Mt Springer Road, Georgia",
       "date": "03/20/2020",
-      "itemName":"Socks",
+      "itemName": "Socks",
       "itemCategory": "Apparel",
       "itemQuantity": "1",
       "id": 1
+    },
+    {
+      "address": "",
+      "date": "2019-01-01",
+      "itemName": "test",
+      "itemCategory": "food",
+      "itemQuantity": "",
+      "userId": null,
+      "id": 2
+    },
+    {
+      "address": "sdfgsd",
+      "date": "2019-01-01",
+      "itemName": "dgfs",
+      "itemCategory": "sdfg",
+      "itemQuantity": "sdfg",
+      "userId": null,
+      "id": 3
+    },
+    {
+      "address": "",
+      "date": "2019-03-22",
+      "itemName": "sdfg",
+      "itemCategory": "sdfgsdfg",
+      "itemQuantity": "sdfgsdfg",
+      "userId": 1,
+      "id": 4
+    },
+    {
+      "address": "",
+      "date": "2019-03-22",
+      "itemName": "test 50002",
+      "itemCategory": "sdfgsdfg",
+      "itemQuantity": "sdfgsdfg",
+      "userId": 1,
+      "id": 5
     }
   ],
-
   "users": [
     {
       "username": "Calm_Neptune",
       "first_name": "Justina",
       "last_name": "Vickers",
       "email": "justinav38@gmail.com",
-      "password": "kiki"
+      "password": "kiki",
+      "id": 1
     }
   ],
-
   "itemType": [
     {
       "apparel": "",
@@ -28,7 +63,6 @@
       "food": ""
     }
   ],
-
   "items": [
     {
       "name": "",

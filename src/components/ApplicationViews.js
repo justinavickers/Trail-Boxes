@@ -24,11 +24,9 @@ class ApplicationViews extends Component {
       .then(boxes => this.setState({ boxes: boxes }));
   };
 
-  addBoxes = object => {
-    return BoxManager.post(object)
-      .then(() => {
-        return BoxManager.getAll();
-      })
+  addBoxes = obj => {
+    return BoxManager.post(obj)
+      .then(() => BoxManager.getAll())
       .then(boxes => this.setState({ boxes: boxes }));
   };
 
@@ -39,11 +37,11 @@ class ApplicationViews extends Component {
   };
 
   componentDidMount() {
-
-    BoxManager.getBoxesSorted().then(boxes => this.setState({ boxes: boxes }));
+    debugger
+    BoxManager.getAll().then(boxes => this.setState({ boxes: boxes }));
     UserManager.getAll().then(users => this.setState({ users: users }))
-    BoxManager.getAll().then(items => this.setState({ items: items}))
-    BoxManager.getAll().then(itemType => this.setState({itemType: itemType}))
+    // BoxManager.getAll().then(items => this.setState({ items: items}))
+    // BoxManager.getAll().then(itemType => this.setState({itemType: itemType}))
   }
 
   render() {
@@ -58,6 +56,7 @@ class ApplicationViews extends Component {
                 boxes={this.state.boxes}
                 addBoxes={this.addBoxes}
                 deleteBoxes={this.deleteBoxes}
+                users={this.state.users}
                 {...props}
               />
             );
