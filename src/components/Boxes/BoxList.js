@@ -4,7 +4,6 @@ class BoxList extends Component {
     componentDidMount() {
         console.log("componentDidMount -- BoxList")
     }
-
     render() {
         console.log("render -- BoxList")
         return (
@@ -34,7 +33,7 @@ class BoxList extends Component {
               >Edit </button>
                <button type="button"
               className="btn red-btn-success"
-              onClick={() => this.props.deleteBox(boxes.id)
+              onClick={() => this.props.deleteBoxes(boxes.id)
                 .then(() => this.props.history.push(`/boxes`))}
               >Delete </button>
               </div>

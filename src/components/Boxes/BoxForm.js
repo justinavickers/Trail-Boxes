@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 // import "./Event.css";
-
 export default class BoxForm extends Component {
   // Set initial state
   state = {
@@ -35,9 +34,9 @@ export default class BoxForm extends Component {
         userId: parseInt(sessionStorage.getItem("credentials"))
       }
       console.log(object)
-
-      this.props.addBox(object)
-        .then(() => this.props.history.push("/boxes"));
+      debugger
+      this.props.addBoxes(object)
+        // .then(() => this.props.history.push("/boxes"));
     }
   }
 
@@ -101,6 +100,7 @@ export default class BoxForm extends Component {
             </input>
           </div>
           <button
+          onClick={this.constructNewBox}
             type="submit"
             className="btn btn-primary"
           >
