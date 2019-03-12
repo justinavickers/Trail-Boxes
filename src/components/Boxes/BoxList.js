@@ -20,11 +20,11 @@ class BoxList extends Component {
             {
             this.props.boxes.map(boxes =>
               <div className="box" key={boxes.id} >
-              <p>{boxes.address}</p>
               <p>{boxes.date}</p>
-              <p>{boxes.itemName}</p>
-              <p>{boxes.itemQuantity}</p>
-              <p>{boxes.itemCategory}</p>
+              <p>{boxes.street}</p>
+              <p>{boxes.city}</p>
+              <p>{boxes.state}</p>
+              <p>{boxes.zipcode}</p>
               <button type="button"
               className="btn btn-success"
               onClick={() => {

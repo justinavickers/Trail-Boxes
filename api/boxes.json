@@ -1,47 +1,12 @@
 {
   "boxes": [
     {
-      "address": "597 Mt Springer Road, Georgia",
+      "id": 1,
       "date": "2019-03-11",
-      "itemName": "shirt",
-      "itemCategory": "Apparel",
-      "itemQuantity": "1",
-      "id": 1
-    },
-    {
-      "address": "city",
-      "date": "2019-01-01",
-      "itemName": "Chicken",
-      "itemCategory": "food",
-      "itemQuantity": "",
-      "id": 2
-    },
-    {
-      "address": "sdfgsd",
-      "date": "2019-01-01",
-      "itemName": "dgfs",
-      "itemCategory": "sdfg",
-      "itemQuantity": "sdfg",
-      "userId": null,
-      "id": 3
-    },
-    {
-      "address": "",
-      "date": "2019-03-22",
-      "itemName": "sdfg",
-      "itemCategory": "sdfgsdfg",
-      "itemQuantity": "sdfgsdfg",
-      "userId": 1,
-      "id": 4
-    },
-    {
-      "address": "",
-      "date": "2019-03-22",
-      "itemName": "test 50002",
-      "itemCategory": "sdfgsdfg",
-      "itemQuantity": "sdfgsdfg",
-      "userId": 1,
-      "id": 5
+      "street": "",
+      "city": "",
+      "state": "",
+      "zipcode": ""
     }
   ],
   "users": [
@@ -54,7 +19,7 @@
       "id": 1
     }
   ],
-  "itemType": [
+  "category": [
     {
       "apparel": "",
       "firstAid": "",
