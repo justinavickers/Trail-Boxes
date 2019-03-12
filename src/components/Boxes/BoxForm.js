@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-// import "./Event.css";
+import "./boxes.css";
 export default class BoxForm extends Component {
   // Set initial state
   state = {
-    address: "",
     date: "",
-    itemName: "",
-    itemCategory: "",
-    itemQuantity: "",
+    street: "",
+    city: "",
+    state: "",
+    zipcode: "",
     userId: ""
   };
 
@@ -21,20 +21,19 @@ export default class BoxForm extends Component {
 
   constructNewBox = evt => {
     evt.preventDefault()
-    if (this.state.address === "" && this.state.date === "" && this.state.itemName === ""
-    && this.state.itemCategory === "" && this.state.itemQuantity === "") {
+    if (this.state.date === "" && this.state.street === "" && this.state.city === ""
+    && this.state.state === "" && this.state.zipcode === "") {
       alert("Please fill out form.")
     } else {
       const object = {
-        address: this.state.address,
         date: this.state.date,
-        itemName: this.state.itemName,
-        itemCategory: this.state.itemCategory,
-        itemQuantity: this.state.itemQuantity,
+        street: this.state.street,
+        city: this.state.city,
+        state: this.state.state,
+        zipcode: this.state.zipcode,
         userId: parseInt(sessionStorage.getItem("credentials"))
       }
       console.log(object)
-      debugger
       this.props.addBoxes(object)
         // .then(() => this.props.history.push("/boxes"));
     }
@@ -45,18 +44,7 @@ export default class BoxForm extends Component {
       <React.Fragment>
         <form onSubmit={this.constructNewBox} className="boxForm">
           <div className="form-group">
-            <label htmlFor="eventName">Address</label>
-            <input
-              type="text"
-              required
-              className="form-control"
-              onChange={this.handleFieldChange}
-              id="name"
-              placeholder="Address"
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="dateForm">Date</label>
+            <label htmlFor="dateForm">Date To Ship:</label>
             <input
               type="Date"
               required
@@ -67,35 +55,46 @@ export default class BoxForm extends Component {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="name">Name</label>
+            <label htmlFor="eventName">Address:</label>
+            <input
+              type="text"
+              required
+              className="form-control"
+              onChange={this.handleFieldChange}
+              id="street"
+              placeholder="Street"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="name"></label>
             <input
               defaultValue=""
               className="form-control"
               onChange={this.handleFieldChange}
-              id="itemName"
-              placeholder="Name"
+              id="city"
+              placeholder="City"
             >
             </input>
           </div>
           <div className="form-group">
-            <label htmlFor="category">Category</label>
+            <label htmlFor="category"></label>
             <input
               defaultValue=""
               className="form-control"
               onChange={this.handleFieldChange}
-              id="itemCategory"
-              placeholder="Category"
+              id="state"
+              placeholder="State"
             >
             </input>
           </div>
           <div className="form-group">
-            <label htmlFor="quantity">Quantity</label>
+            <label htmlFor="quantity"></label>
             <input
               defaultValue=""
               className="form-control"
               onChange={this.handleFieldChange}
-              id="itemQuantity"
-              placeholder="Quantity"
+              id="zipcode"
+              placeholder="Zipcode"
             >
             </input>
           </div>
