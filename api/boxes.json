@@ -1,12 +1,13 @@
 {
   "boxes": [
     {
-      "id": 1,
-      "date": "2019-03-11",
-      "street": "",
-      "city": "",
-      "state": "",
-      "zipcode": ""
+      "date": "2019-03-14",
+      "street": "4 Privet Drive",
+      "city": "Little Whinging",
+      "state": "Surrey",
+      "zipcode": "45453",
+      "userId": 1,
+      "id": 3
     }
   ],
   "users": [
@@ -19,18 +20,23 @@
       "id": 1
     }
   ],
-  "category": [
+  "categories": [
     {
-      "apparel": "",
-      "firstAid": "",
-      "gear": "",
-      "food": ""
+      "name": "apparel",
+      "id": 1
+    },
+    {
+      "name": "first aid",
+      "id": 2
+    },
+    {
+      "name": "gear",
+      "id": 3
+    },
+    {
+      "name": "food",
+      "id": 4
     }
   ],
-  "items": [
-    {
-      "name": "",
-      "quantity": ""
-    }
-  ]
+  "items": []
 }

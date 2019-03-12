@@ -1,9 +1,9 @@
-.event:first-of-type{
-  background: pink;
-  font-weight: bold;
+.btn {
+  background: lightblue;
+  margin: 4px;
+  opacity: 0.7
 }
 
-div .formGroup {
-  margin: 0px;
-  padding: 0px;
+.hidden {
+  display:none;
 }

@@ -22,7 +22,7 @@ export default class BoxForm extends Component {
   constructNewBox = evt => {
     evt.preventDefault()
     if (this.state.date === "" && this.state.street === "" && this.state.city === ""
-    && this.state.state === "" && this.state.zipcode === "") {
+      && this.state.state === "" && this.state.zipcode === "" && this.state.category === "" && this.state.item === "") {
       alert("Please fill out form.")
     } else {
       const object = {
@@ -31,11 +31,13 @@ export default class BoxForm extends Component {
         city: this.state.city,
         state: this.state.state,
         zipcode: this.state.zipcode,
+        category: this.state.category,
+        item: this.state.item,
         userId: parseInt(sessionStorage.getItem("credentials"))
       }
       console.log(object)
       this.props.addBoxes(object)
-        // .then(() => this.props.history.push("/boxes"));
+      // this.props.addItems(object)
     }
   }
 
@@ -98,8 +100,28 @@ export default class BoxForm extends Component {
             >
             </input>
           </div>
+          <div className="form-group">
+            <label htmlFor="quantity">Category</label>
+          <select onChange={this.handleFieldChange} id="category1" className="dd-list">
+            <option className="food">Food</option>
+            <option className="firstAid">First Aid</option>
+            <option className="gear">Gear</option>
+            <option className="apparel">Apparel</option>
+          </select>
+          </div>
+          <div className="form-group">
+          <br></br>
+            <label htmlFor="quantity">Item #1</label>
+            <input
+              defaultValue=""
+              className="form-control"
+              onChange={this.handleFieldChange}
+              id="item1"
+              placeholder="Item"
+            >
+            </input>
+          </div>
           <button
-          onClick={this.constructNewBox}
             type="submit"
             className="btn btn-primary"
           >

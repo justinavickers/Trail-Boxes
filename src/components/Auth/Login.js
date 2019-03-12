@@ -34,7 +34,7 @@ export default class Login extends Component {
         }
       })
     } else {
-      alert("Please Fill Out Form 😬!")
+      alert("Please Fill Out Form!")
     }
   }
 
@@ -52,16 +52,16 @@ export default class Login extends Component {
         }
       )
     } else {
-      alert("Please Fill Out Form📦!")
+      alert("Please Fill Out Form!")
     }
   }
 
   render() {
     return (
       <form className="loginForm">
-        <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
-        <label htmlFor="inputUsername">Username</label>
-        <input
+        <h1 className="h3 mb-3 font-weight-normal">Please Sign In</h1>
+        <label htmlFor="inputUsername"></label>
+        <input class="loginInput"
           onChange={this.handleFieldChange}
           type="username"
           id="username"
@@ -69,18 +69,18 @@ export default class Login extends Component {
           required=""
           autoFocus=""
         />
-        <label htmlFor="inputPassword">Password</label>
-        <input
+        <label htmlFor="inputPassword"></label>
+        <input class="loginInput"
           onChange={this.handleFieldChange}
           type="password"
           id="password"
           placeholder={`Password`}
           required=""
         />
-        <button type="submit" onClick={this.handleLogin}>
+        <button type="submit" class="btnNav" onClick={this.handleLogin}>
           Sign in
         </button>
-        <button type="submit" onClick={this.handleRegister}>
+        <button type="submit" class="btnNav" onClick={this.handleRegister}>
           Register
         </button>
       </form>

@@ -1,12 +1,32 @@
 body {
-  margin: 0;
-  padding: 70px 0 0 0;
-  font-family: sans-serif;
-  padding-top: 200px;
-  padding: 200px
+  margin: 10;
+  padding: 30px 0 0 0;
+  font-family: 'Open Sans Condensed', sans-serif;
+  padding-top: 50px;
+  padding: 50px
 }
 
-.card-link {
-  margin: 12px 0 0 0;
-  font-size: 0.7em;
+#root {
+  margin: 10;
+  padding: 30px 0 0 0;
+  font-family: 'Open Sans Condensed', sans-serif;
+  padding-top: 50px;
+  padding: 50px
+}
+
+.form-group {
+  margin: 0px;
+  padding: 0px;
+}
+
+.box {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 18px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.loginInput {
+  margin: 5px;
+  border-radius: 3px;
 }

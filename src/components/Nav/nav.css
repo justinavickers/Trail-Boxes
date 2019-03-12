@@ -1,3 +1,16 @@
 .nav-pills {
 float: right;
 }
+
+.btnNav {
+  border-radius: 4px;
+  margin: 5px;
+  background: lightblue;
+  border: lightblue;
+  margin: 4px;
+  opacity: 0.7
+}
+
+.navbar {
+  float: right;
+}
