@@ -10,7 +10,7 @@ class Nav extends Component {
 
   render() {
     return (
-      <nav className="navbar navbar-light fixed-top light-blue flex-md-nowrap p-0 shadow">
+      <nav className="navbar navbar-light fixed-top flex-md-nowrap p-0 shadow">
         <ul className="nav nav-pills">
           <li className="nav-item">
             <Link className="nav-link" to="/boxes">Boxes</Link>
@@ -20,9 +20,8 @@ class Nav extends Component {
           </li>
           <li
           className="nav-link"> {this.props.activeUser.username}
-          <button
+          <button class="btnNav"
             type="button"
-            className="button"
             onClick={this.logout}>
             Logout
         </button>

@@ -30,6 +30,12 @@ class ApplicationViews extends Component {
       .then(boxes => this.setState({ boxes: boxes }));
   };
 
+  // addItems = obj => {
+  //   return BoxManager.post(obj)
+  //   .then (() => BoxManager.getAll())
+  //   .then(items => this.setState({items: items}))
+  // }
+
   deleteBoxes = id => {
     return BoxManager.deleteAndList(id)
     .then(boxes => this.setState({ boxes: boxes }));
@@ -54,6 +60,7 @@ class ApplicationViews extends Component {
                 boxes={this.state.boxes}
                 addBoxes={this.addBoxes}
                 deleteBoxes={this.deleteBoxes}
+                addItems={this.addItems}
                 users={this.state.users}
                 {...props}
               />
@@ -68,6 +75,7 @@ class ApplicationViews extends Component {
               <BoxForm
                 boxes={this.state.boxes}
                 addBoxes={this.addBoxes}
+                addItems={this.addItems}
                 {...props}
               />
             );
