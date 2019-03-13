@@ -4,10 +4,8 @@ import BoxModal from "./BoxModal"
 class BoxList extends Component {
 
   componentDidMount() {
-    console.log("componentDidMount -- BoxList")
   }
   render() {
-    console.log("render -- BoxList")
     return (
       <React.Fragment>
         <div className="addButtonDiv">

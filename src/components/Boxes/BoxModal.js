@@ -15,15 +15,15 @@ class BoxModal extends React.Component {
     }));
   }
 
-  deleteBox = () => this.props.deleteBoxes(this.props.boxes.id)
-    .then(() => this.props.history.push(`/boxes`))
-
+  deleteBox = () => this.props.deleteBoxes(2)
 
 
 
   render() {
+
     return (
       <div>
+      {/* {console.log(this.props.boxes.id)} */}
         <Button color="info" onClick={this.toggle}>Details</Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}>Contents of Your Resupply Box</ModalHeader>
@@ -34,17 +34,10 @@ class BoxModal extends React.Component {
             <p>{this.props.currentBox.zipcode}</p>
           </ModalBody>
           <ModalFooter>
-
-
-
-            {/* console.log(this.props.currentBox.id) */}
-                <Link to={`/boxes/${this.props.currentBox.id}/edit`} >Edit</Link>
-
-
-            <Button type="button"
-              className="btn red-btn-success"
-              onClick={() => this.props.deleteBoxes(this.props.currentBox.id)
-                .then(() => this.props.history.push(`/boxes`))} >Delete</Button>
+                <Link className="editLink" to={`/boxes/${this.props.currentBox.id}/edit`} >Edit</Link>
+            <Button
+              onClick={() => this.deleteBox()}>Delete
+              </Button>
 
           </ModalFooter>
         </Modal>

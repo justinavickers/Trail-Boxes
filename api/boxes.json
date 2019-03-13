@@ -1,20 +1,11 @@
 {
   "boxes": [
     {
-      "date": "2019-03-14",
-      "street": "4 Privet Drive(Harry Potter)",
-      "city": "Little Whinging",
-      "state": "Surrey",
-      "zipcode": "45453",
-      "id": 3
-    },
-    {
       "date": "2019-03-13",
-      "street": "123 Lane",
+      "street": "123 Lane road",
       "city": "Unicorn",
       "state": "TN",
       "zipcode": "37211",
-      "userId": 1,
       "id": 4
     },
     {
