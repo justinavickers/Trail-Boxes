@@ -1,5 +1,7 @@
-.nav-pills {
-float: right;
+.nav-link {
+  color: green;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .btnNav {
@@ -12,5 +14,16 @@ float: right;
 }
 
 .navbar {
-  float: right;
+  background-color: lightblue;
+  overflow: hidden;
+  opacity: 0.7;
+}
+
+.navbar a:hover {
+  background-color: #ccccff;
+  color: green;
+}
+
+a.li {
+  text-align: center;
 }

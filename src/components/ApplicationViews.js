@@ -19,22 +19,16 @@ class ApplicationViews extends Component {
   updateBoxes = editedObject => {
     return BoxManager.put(editedObject)
       .then(() => {
-        return BoxManager.getAll();
+        return BoxManager.get();
       })
       .then(boxes => this.setState({ boxes: boxes }));
   };
 
   addBoxes = obj => {
     return BoxManager.post(obj)
-      .then(() => BoxManager.getAll())
+      .then(() => BoxManager.getBoxesSorted())
       .then(boxes => this.setState({ boxes: boxes }));
   };
-
-  // addItems = obj => {
-  //   return BoxManager.post(obj)
-  //   .then (() => BoxManager.getAll())
-  //   .then(items => this.setState({items: items}))
-  // }
 
   deleteBoxes = id => {
     return BoxManager.deleteAndList(id)
@@ -42,9 +36,9 @@ class ApplicationViews extends Component {
   };
 
   componentDidMount() {
-    BoxManager.getAll().then(boxes => this.setState({ boxes: boxes }));
+    BoxManager.getBoxesSorted().then(boxes => this.setState({ boxes: boxes }));
     UserManager.getAll().then(users => this.setState({ users: users }))
-    BoxManager.getAll().then(items => this.setState({ items: items}))
+    BoxManager.getBoxesSorted().then(items => this.setState({ items: items}))
     BoxManager.getAll().then(itemType => this.setState({itemType: itemType}))
   }
 
@@ -60,7 +54,7 @@ class ApplicationViews extends Component {
                 boxes={this.state.boxes}
                 addBoxes={this.addBoxes}
                 deleteBoxes={this.deleteBoxes}
-                addItems={this.addItems}
+                updateBoxes={this.updateBoxes}
                 users={this.state.users}
                 {...props}
               />

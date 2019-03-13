@@ -1,15 +1,5 @@
 {
-  "boxes": [
-    {
-      "date": "2019-03-14",
-      "street": "4 Privet Drive",
-      "city": "Little Whinging",
-      "state": "Surrey",
-      "zipcode": "45453",
-      "userId": 1,
-      "id": 3
-    }
-  ],
+  "boxes": [],
   "users": [
     {
       "username": "Calm_Neptune",

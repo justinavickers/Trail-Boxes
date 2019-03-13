@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
+import BoxModal from "./BoxModal"
+
 class BoxList extends Component {
 
   componentDidMount() {
-    console.log("componentDidMount -- BoxList")
   }
   render() {
-    console.log("render -- BoxList")
     return (
       <React.Fragment>
-        <div>
+        <div className="addButtonDiv">
           <button type="button"
             className="btn btn-addButton"
             onClick={() => {
@@ -18,33 +18,11 @@ class BoxList extends Component {
         </div>
         <section className="boxes">
           {
-            this.props.boxes.map(boxes =>
-              <div className="box" key={boxes.id} >
-                <p>{boxes.date}</p>
-                <div id={"boxDetails" + boxes.id} className="hidden">
-                  <p>{boxes.street}</p>
-                  <p>{boxes.city}</p>
-                  <p>{boxes.state}</p>
-                  <p>{boxes.zipcode}</p>
-                  <button type="button"
-                  className="btn btnEdit"
-                  onClick={() => {
-                    this.props.history.push(`/boxes/${boxes.id}/edit`)
-                  }}
-                >Edit </button>
-                <button type="button"
-                  className="btn red-btn-success"
-                  onClick={() => this.props.deleteBoxes(boxes.id)
-                    .then(() => this.props.history.push(`/boxes`))}
-                >Delete </button>
-                </div>
-                <button type="button"
-                  className="btn btnDetails"
-                  onClick={() => {
-                    document.getElementById("boxDetails" + boxes.id).classList.toggle("hidden")
-                  }}
-                >Details </button>
-
+            //to make sure each card has a modal, when you are mapping through the array
+            this.props.boxes.map(box =>
+              <div className="box" key={box.id} >
+                <p>{box.date}</p>
+            <BoxModal currentBox={box} {...this.props}></BoxModal>
               </div>
             )
           }
