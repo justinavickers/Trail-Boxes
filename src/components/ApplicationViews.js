@@ -19,7 +19,7 @@ class ApplicationViews extends Component {
   updateBoxes = editedObject => {
     return BoxManager.put(editedObject)
       .then(() => {
-        return BoxManager.getAll();
+        return BoxManager.get();
       })
       .then(boxes => this.setState({ boxes: boxes }));
   };
@@ -30,7 +30,6 @@ class ApplicationViews extends Component {
       .then(boxes => this.setState({ boxes: boxes }));
   };
 
-
   deleteBoxes = id => {
     return BoxManager.deleteAndList(id)
     .then(boxes => this.setState({ boxes: boxes }));
@@ -39,7 +38,7 @@ class ApplicationViews extends Component {
   componentDidMount() {
     BoxManager.getBoxesSorted().then(boxes => this.setState({ boxes: boxes }));
     UserManager.getAll().then(users => this.setState({ users: users }))
-    BoxManager.getAll().then(items => this.setState({ items: items}))
+    BoxManager.getBoxesSorted().then(items => this.setState({ items: items}))
     BoxManager.getAll().then(itemType => this.setState({itemType: itemType}))
   }
 

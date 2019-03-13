@@ -15,7 +15,7 @@ class BoxModal extends React.Component {
     }));
   }
 
-  deleteBox = () => this.props.deleteBoxes(2)
+  deleteBox = (id) => this.props.deleteBoxes(id)
 
 
 
@@ -36,7 +36,7 @@ class BoxModal extends React.Component {
           <ModalFooter>
                 <Link className="editLink" to={`/boxes/${this.props.currentBox.id}/edit`} >Edit</Link>
             <Button
-              onClick={() => this.deleteBox()}>Delete
+              onClick={() => this.deleteBox(this.props.currentBox.id)}>Delete
               </Button>
 
           </ModalFooter>

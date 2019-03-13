@@ -19,10 +19,10 @@ class BoxList extends Component {
         <section className="boxes">
           {
             //to make sure each card has a modal, when you are mapping through the array
-            this.props.boxes.map(boxes =>
-              <div className="box" key={boxes.id} >
-                <p>{boxes.date}</p>
-            <BoxModal currentBox={boxes} {...this.props}></BoxModal>
+            this.props.boxes.map(box =>
+              <div className="box" key={box.id} >
+                <p>{box.date}</p>
+            <BoxModal currentBox={box} {...this.props}></BoxModal>
               </div>
             )
           }
