@@ -5,14 +5,15 @@
 }
 
 .addButtonDiv {
-text-align: center;
+  text-align: center;
 }
 
 .hidden {
-  display:none;
+  display: none;
 }
 
 .boxes {
   display: grid;
-  grid-gap: 50px;
+  grid-auto-flow: column;
+  grid-column-gap: 50px;
 }
