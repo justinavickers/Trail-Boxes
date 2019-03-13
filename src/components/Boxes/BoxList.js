@@ -8,7 +8,7 @@ class BoxList extends Component {
     console.log("render -- BoxList")
     return (
       <React.Fragment>
-        <div>
+        <div className="addButtonDiv">
           <button type="button"
             className="btn btn-addButton"
             onClick={() => {
