@@ -24,9 +24,7 @@ class BoxList extends Component {
             this.props.boxes.map(boxes =>
               <div className="box" key={boxes.id} >
                 <p>{boxes.date}</p>
-            <BoxModal boxes={boxes}></BoxModal>
-
-
+            <BoxModal currentBox={boxes} {...this.props}></BoxModal>
               </div>
             )
           }

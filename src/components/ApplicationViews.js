@@ -30,11 +30,6 @@ class ApplicationViews extends Component {
       .then(boxes => this.setState({ boxes: boxes }));
   };
 
-  // addItems = obj => {
-  //   return BoxManager.post(obj)
-  //   .then (() => BoxManager.getAll())
-  //   .then(items => this.setState({items: items}))
-  // }
 
   deleteBoxes = id => {
     return BoxManager.deleteAndList(id)
@@ -60,7 +55,7 @@ class ApplicationViews extends Component {
                 boxes={this.state.boxes}
                 addBoxes={this.addBoxes}
                 deleteBoxes={this.deleteBoxes}
-                addItems={this.addItems}
+                updateBoxes={this.updateBoxes}
                 users={this.state.users}
                 {...props}
               />
