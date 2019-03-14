@@ -20,12 +20,12 @@ class Nav extends Component {
           </li>
           <li
           className="nav-link"> {this.props.activeUser.username}
+        </li>
           <button className="btnNav"
             type="button"
             onClick={this.logout}>
             Logout
         </button>
-        </li>
         </ul>
       </nav>
         )

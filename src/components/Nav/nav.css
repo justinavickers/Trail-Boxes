@@ -5,12 +5,16 @@
 }
 
 .btnNav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 80px;
   border-radius: 4px;
-  margin: 5px;
   background: lightblue;
   border: lightblue;
-  margin: 4px;
-  opacity: 0.7
+  opacity: 0.7;
+  font-weight: bold;
+  align-items: flex end;
 }
 
 .navbar {
@@ -19,11 +23,9 @@
   opacity: 0.7;
 }
 
-.navbar a:hover {
+.navbar li:hover {
   background-color: #ccccff;
   color: green;
-}
+  align-items: flex end;
 
-a.li {
-  text-align: center;
 }
