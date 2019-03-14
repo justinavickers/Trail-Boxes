@@ -1,5 +1,14 @@
 {
-  "boxes": [],
+  "boxes": [
+    {
+      "date": "2019-03-14",
+      "street": "123 Lane road!!!!!",
+      "city": "Unicorn",
+      "state": "TN",
+      "zipcode": "37211",
+      "id": 1
+    }
+  ],
   "users": [
     {
       "username": "Calm_Neptune",
@@ -8,6 +17,22 @@
       "email": "justinav38@gmail.com",
       "password": "kiki",
       "id": 1
+    },
+    {
+      "username": "rora",
+      "password": "spencer",
+      "first_name": "",
+      "last_name": "",
+      "email": "aurora@gmail.com",
+      "id": 2
+    },
+    {
+      "username": "deanna2000",
+      "password": "skylar",
+      "first_name": "",
+      "last_name": "",
+      "email": "deanna2000@gmail.com",
+      "id": 3
     }
   ],
   "categories": [

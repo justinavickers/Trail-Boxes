@@ -19,7 +19,7 @@ class ApplicationViews extends Component {
   updateBoxes = editedObject => {
     return BoxManager.put(editedObject)
       .then(() => {
-        return BoxManager.get();
+        return BoxManager.getAll();
       })
       .then(boxes => this.setState({ boxes: boxes }));
   };
@@ -45,6 +45,7 @@ class ApplicationViews extends Component {
   render() {
     return (
       <React.Fragment>
+        {/* <Route path="/login" Component{login}></Route> */}
         <Route
           exact
           path="/boxes"

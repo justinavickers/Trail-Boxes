@@ -117,7 +117,7 @@ export default class BoxEditForm extends Component {
             </input>
           </div>
           <button
-          onClick={this.constructNewBox}
+          onClick={this.updateExistingBox}
             type="submit"
             className="btn btn-primary"
           >
