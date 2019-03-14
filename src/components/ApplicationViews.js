@@ -5,6 +5,7 @@ import BoxManager from "../modules/BoxManager";
 import BoxForm from "./Boxes/BoxForm"
 import BoxList from "./Boxes/BoxList"
 import BoxEditForm from "./Boxes/BoxEditForm"
+import Container from "./Map/Container"
 
 
 
@@ -46,6 +47,14 @@ class ApplicationViews extends Component {
     return (
       <React.Fragment>
         {/* <Route path="/login" Component{login}></Route> */}
+        <Route exact path="/map"
+        render={props => {
+          return (
+            <Container />
+          )
+        }}
+
+        ></Route>
         <Route
           exact
           path="/boxes"

@@ -1,14 +1,5 @@
 {
-  "boxes": [
-    {
-      "date": "2019-03-14",
-      "street": "123 Lane road!!!!!",
-      "city": "Unicorn",
-      "state": "TN",
-      "zipcode": "37211",
-      "id": 1
-    }
-  ],
+  "boxes": [],
   "users": [
     {
       "username": "Calm_Neptune",
