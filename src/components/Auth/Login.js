@@ -6,7 +6,10 @@ export default class Login extends Component {
   // Set initial state
   state = {
     password: "",
-    username: ""
+    username: "",
+    first_name: "",
+    last_name: "",
+    email: ""
   }
 
   // Update state whenever an input field is edited
@@ -14,28 +17,6 @@ export default class Login extends Component {
     const stateToChange = {}
     stateToChange[evt.target.id] = evt.target.value
     this.setState(stateToChange)
-  }
-
-  handleRegister = e => {
-    e.preventDefault()
-    const newUser = {
-      username: this.state.username,
-      password: this.state.password
-    }
-    if (this.state.username && this.state.password) {
-      UserManager.searchUsername(this.state.username).then(users => {
-        if (users.length) {
-          alert(`Username ${this.state.username} already exits!`)
-        } else {
-          UserManager.addUser(newUser).then(user => {
-            sessionStorage.setItem("credentials", parseInt(user.id))
-            this.props.setAuth()
-          })
-        }
-      })
-    } else {
-      alert("Please Fill Out Form!")
-    }
   }
 
   handleLogin = e => {
@@ -79,9 +60,6 @@ export default class Login extends Component {
         />
         <button type="submit" className="btnNav" onClick={this.handleLogin}>
           Sign in
-        </button>
-        <button type="submit" className="btnNav" onClick={this.handleRegister}>
-          Register
         </button>
       </form>
     )
