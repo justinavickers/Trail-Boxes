@@ -7,8 +7,6 @@ import BoxList from "./Boxes/BoxList"
 import BoxEditForm from "./Boxes/BoxEditForm"
 import Container from "./Map/Container"
 
-
-
 class ApplicationViews extends Component {
   state = {
     boxes: [],
@@ -46,7 +44,6 @@ class ApplicationViews extends Component {
   render() {
     return (
       <React.Fragment>
-        {/* <Route path="/login" Component{login}></Route> */}
         <Route exact path="/map"
         render={props => {
           return (
