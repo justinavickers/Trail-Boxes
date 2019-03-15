@@ -6,10 +6,7 @@ export default class Login extends Component {
   // Set initial state
   state = {
     password: "",
-    username: "",
-    first_name: "",
-    last_name: "",
-    email: ""
+    username: ""
   }
 
   // Update state whenever an input field is edited

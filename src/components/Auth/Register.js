@@ -5,7 +5,7 @@ import UserManager from "../../modules/UserManager"
 export default class Register extends Component {
   // Set initial state
   state = {
-    password: "",
+    passwordRegister: "",
     username: "",
     first_name: "",
     last_name: "",
@@ -23,16 +23,17 @@ export default class Register extends Component {
     e.preventDefault()
     const newUser = {
       username: this.state.username,
-      password: this.state.password,
+      password: this.state.passwordRegister,
       first_name: this.state.first_name,
       last_name: this.state.last_name,
       email: this.state.email
     }
-    if (this.state.username && this.state.password) {
+    if (this.state.username && this.state.passwordRegister) {
       UserManager.searchUsername(this.state.username).then(users => {
         if (users.length) {
           alert(`Username ${this.state.username} already exits!`)
         } else {
+          console.log(newUser, "user")
           UserManager.addUser(newUser).then(user => {
             sessionStorage.setItem("credentials", parseInt(user.id))
             this.props.setAuth()
@@ -62,7 +63,7 @@ export default class Register extends Component {
         <input className="registerInput"
           onChange={this.handleFieldChange}
           type="password"
-          id="password"
+          id="passwordRegister"
           placeholder={`Password`}
           required=""
         />
@@ -70,7 +71,7 @@ export default class Register extends Component {
         <input className="registerInput"
           onChange={this.handleFieldChange}
           type="text"
-          id="firstName"
+          id="first_name"
           placeholder={`FirstName`}
           required=""
         />
@@ -78,7 +79,7 @@ export default class Register extends Component {
         <input className="registerInput"
           onChange={this.handleFieldChange}
           type="text"
-          id="lastName"
+          id="last_name"
           placeholder={`LastName`}
           required=""
         />
