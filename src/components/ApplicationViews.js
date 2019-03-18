@@ -32,9 +32,16 @@ class ApplicationViews extends Component {
   };
 
   addBoxes = obj => {
+    let newBox = null
     return BoxManager.post(obj)
-      .then(() => BoxManager.getBoxesSorted())
-      .then(boxes => this.setState({ boxes: boxes }));
+    .then((createdBox) => {
+      newBox = createdBox
+    return BoxManager.getBoxesSorted()
+    })
+    .then(boxes => {
+      this.setState({ boxes: boxes })
+      return newBox
+    })
   };
 
   deleteBoxes = id => {
@@ -95,9 +102,8 @@ class ApplicationViews extends Component {
         render={props => {
           return (
           <ItemForm
-          boxes={this.state.boxes}
           addItems={this.addItems}
-          {...this.props}
+          {...props}
           />
           );
         }}

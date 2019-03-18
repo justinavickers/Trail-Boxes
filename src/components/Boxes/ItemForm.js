@@ -5,7 +5,8 @@ export default class ItemForm extends Component {
   state = {
     userId: "",
     items: "",
-    categoryId: ""
+    categoryId: "1",
+    boxId: ""
   };
 
 
@@ -24,24 +25,27 @@ export default class ItemForm extends Component {
       const itemObject = {
         items: this.state.items,
         userId: parseInt(sessionStorage.getItem("credentials")),
-        categoryId: parseInt()
+        categoryId: parseInt(this.state.categoryId),
+        boxId: parseInt(this.props.history.location.state.boxId)
       }
       console.log(itemObject)
       this.props.addItems(itemObject)
+
     }
   }
 
   render() {
+    console.log("props are:", this.props)
     return (
       <React.Fragment>
         <form onSubmit={this.constructNewItems} className="boxForm">
           <div className="form-group">
             <label htmlFor="quantity">Category</label>
-          <select onChange={this.handleFieldChange} id="categories" className="dd-list">
-            <option className="food">Food</option>
-            <option className="firstAid">First Aid</option>
-            <option className="gear">Gear</option>
-            <option className="apparel">Apparel</option>
+          <select onChange={this.handleFieldChange} id="categoryId" className="dd-list">
+            <option value="1" className="food">Food</option>
+            <option value="2" className="firstAid">First Aid</option>
+            <option value="3" className="gear">Gear</option>
+            <option value="4" className="apparel">Apparel</option>
           </select>
           </div>
           <div className="form-group">
@@ -58,11 +62,11 @@ export default class ItemForm extends Component {
           </div>
           <div className="form-group">
             <label htmlFor="quantity">Category</label>
-          <select onChange={this.handleFieldChange} id="categories" className="dd-list">
-            <option className="food">Food</option>
-            <option className="firstAid">First Aid</option>
-            <option className="gear">Gear</option>
-            <option className="apparel">Apparel</option>
+          <select onChange={this.handleFieldChange} id="categoryId" className="dd-list">
+            <option value="1" className="food">Food</option>
+            <option value="2" className="firstAid">First Aid</option>
+            <option value="3" className="gear">Gear</option>
+            <option value="4" className="apparel">Apparel</option>
           </select>
           </div>
           <div className="form-group">
@@ -204,6 +208,7 @@ export default class ItemForm extends Component {
             </input>
           </div>
           <button
+          onClick={this.constructNewItems}
             type="submit"
             className="btn btn-primary"
           >

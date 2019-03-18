@@ -35,6 +35,12 @@ export default class BoxForm extends Component {
       }
       console.log(object)
       this.props.addBoxes(object)
+      .then((newBox) => this.props.history.push(
+        {
+          pathname: "/items/new",
+          state: { boxId: newBox.id }
+        }
+        ))
     }
   }
 
