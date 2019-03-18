@@ -18,12 +18,10 @@ class BoxModal extends React.Component {
   deleteBox = (id) => this.props.deleteBoxes(id)
 
 
-
   render() {
 
     return (
       <div>
-      {/* {console.log(this.props.boxes.id)} */}
         <Button color="info" onClick={this.toggle}>Details</Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}>Contents of Your Resupply Box</ModalHeader>
@@ -32,6 +30,8 @@ class BoxModal extends React.Component {
             <p>{this.props.currentBox.city}</p>
             <p>{this.props.currentBox.state}</p>
             <p>{this.props.currentBox.zipcode}</p>
+            <p>{this.props.currentBox.items}</p>
+            <p>{this.props.currentBox.categories}</p>
           </ModalBody>
           <ModalFooter>
                 <Link className="editLink" to={`/boxes/${this.props.currentBox.id}/edit`} >Edit</Link>

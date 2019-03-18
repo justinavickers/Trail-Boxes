@@ -8,7 +8,7 @@ export default class BoxForm extends Component {
     city: "",
     state: "",
     zipcode: "",
-    userId: ""
+    userId: "",
   };
 
 
@@ -22,7 +22,7 @@ export default class BoxForm extends Component {
   constructNewBox = evt => {
     evt.preventDefault()
     if (this.state.date === "" && this.state.street === "" && this.state.city === ""
-      && this.state.state === "" && this.state.zipcode === "" && this.state.category === "" && this.state.item === "") {
+      && this.state.state === "" && this.state.zipcode === "" && this.state.categories === "" && this.state.item === "") {
       alert("Please fill out form.")
     } else {
       const object = {
@@ -31,13 +31,10 @@ export default class BoxForm extends Component {
         city: this.state.city,
         state: this.state.state,
         zipcode: this.state.zipcode,
-        category: this.state.category,
-        item: this.state.item,
         userId: parseInt(sessionStorage.getItem("credentials"))
       }
       console.log(object)
       this.props.addBoxes(object)
-      // this.props.addItems(object)
     }
   }
 
@@ -97,174 +94,6 @@ export default class BoxForm extends Component {
               onChange={this.handleFieldChange}
               id="zipcode"
               placeholder="Zipcode"
-            >
-            </input>
-          </div>
-          <div className="form-group">
-            <label htmlFor="quantity">Category</label>
-          <select onChange={this.handleFieldChange} id="category1" className="dd-list">
-            <option className="food">Food</option>
-            <option className="firstAid">First Aid</option>
-            <option className="gear">Gear</option>
-            <option className="apparel">Apparel</option>
-          </select>
-          </div>
-          <div className="form-group">
-          <br></br>
-            <label htmlFor="quantity">Item #1</label>
-            <input
-              defaultValue=""
-              className="form-control"
-              onChange={this.handleFieldChange}
-              id="item1"
-              placeholder="Item"
-            >
-            </input>
-          </div>
-          <div className="form-group">
-            <label htmlFor="quantity">Category</label>
-          <select onChange={this.handleFieldChange} id="category2" className="dd-list">
-            <option className="food">Food</option>
-            <option className="firstAid">First Aid</option>
-            <option className="gear">Gear</option>
-            <option className="apparel">Apparel</option>
-          </select>
-          </div>
-          <div className="form-group">
-          <br></br>
-            <label htmlFor="quantity">Item #2</label>
-            <input
-              defaultValue=""
-              className="form-control"
-              onChange={this.handleFieldChange}
-              id="item2"
-              placeholder="Item"
-            >
-            </input>
-          </div>
-          <div className="form-group">
-            <label htmlFor="quantity">Category</label>
-          <select onChange={this.handleFieldChange} id="category3" className="dd-list">
-            <option className="food">Food</option>
-            <option className="firstAid">First Aid</option>
-            <option className="gear">Gear</option>
-            <option className="apparel">Apparel</option>
-          </select>
-          </div>
-          <div className="form-group">
-          <br></br>
-            <label htmlFor="quantity">Item #3</label>
-            <input
-              defaultValue=""
-              className="form-control"
-              onChange={this.handleFieldChange}
-              id="item3"
-              placeholder="Item"
-            >
-            </input>
-          </div>
-          <div className="form-group">
-            <label htmlFor="quantity">Category</label>
-          <select onChange={this.handleFieldChange} id="category4" className="dd-list">
-            <option className="food">Food</option>
-            <option className="firstAid">First Aid</option>
-            <option className="gear">Gear</option>
-            <option className="apparel">Apparel</option>
-          </select>
-          </div>
-          <div className="form-group">
-          <br></br>
-            <label htmlFor="quantity">Item #4</label>
-            <input
-              defaultValue=""
-              className="form-control"
-              onChange={this.handleFieldChange}
-              id="item4"
-              placeholder="Item"
-            >
-            </input>
-          </div>
-          <div className="form-group">
-            <label htmlFor="quantity">Category</label>
-          <select onChange={this.handleFieldChange} id="category5" className="dd-list">
-            <option className="food">Food</option>
-            <option className="firstAid">First Aid</option>
-            <option className="gear">Gear</option>
-            <option className="apparel">Apparel</option>
-          </select>
-          </div>
-          <div className="form-group">
-          <br></br>
-            <label htmlFor="quantity">Item #5</label>
-            <input
-              defaultValue=""
-              className="form-control"
-              onChange={this.handleFieldChange}
-              id="item5"
-              placeholder="Item"
-            >
-            </input>
-          </div>
-          <div className="form-group">
-            <label htmlFor="quantity">Category</label>
-          <select onChange={this.handleFieldChange} id="category6" className="dd-list">
-            <option className="food">Food</option>
-            <option className="firstAid">First Aid</option>
-            <option className="gear">Gear</option>
-            <option className="apparel">Apparel</option>
-          </select>
-          </div>
-          <div className="form-group">
-          <br></br>
-            <label htmlFor="quantity">Item #6</label>
-            <input
-              defaultValue=""
-              className="form-control"
-              onChange={this.handleFieldChange}
-              id="item6"
-              placeholder="Item"
-            >
-            </input>
-          </div>
-          <div className="form-group">
-            <label htmlFor="quantity">Category</label>
-          <select onChange={this.handleFieldChange} id="category7" className="dd-list">
-            <option className="food">Food</option>
-            <option className="firstAid">First Aid</option>
-            <option className="gear">Gear</option>
-            <option className="apparel">Apparel</option>
-          </select>
-          </div>
-          <div className="form-group">
-          <br></br>
-            <label htmlFor="quantity">Item #7</label>
-            <input
-              defaultValue=""
-              className="form-control"
-              onChange={this.handleFieldChange}
-              id="item7"
-              placeholder="Item"
-            >
-            </input>
-          </div>
-          <div className="form-group">
-            <label className="categoryInput" htmlFor="quantity">Category</label>
-          <select onChange={this.handleFieldChange} id="category8" className="dd-list">
-            <option className="food">Food</option>
-            <option className="firstAid">First Aid</option>
-            <option className="gear">Gear</option>
-            <option className="apparel">Apparel</option>
-          </select>
-          </div>
-          <div className="form-group">
-          <br></br>
-            <label htmlFor="quantity">Item #8</label>
-            <input
-              defaultValue=""
-              className="form-control"
-              onChange={this.handleFieldChange}
-              id="item8"
-              placeholder="Item"
             >
             </input>
           </div>

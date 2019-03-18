@@ -1,5 +1,17 @@
 {
-  "boxes": [],
+  "boxes": [
+    {
+      "date": "2019-03-21",
+      "street": "17530 Airline Hwy",
+      "city": "Prairieville",
+      "state": "Louisiana",
+      "zipcode": "70769",
+      "categories": "Gear",
+      "items": "trekking poles",
+      "userId": 1,
+      "id": 1
+    }
+  ],
   "users": [
     {
       "username": "Calm_Neptune",
@@ -40,7 +52,14 @@
     {
       "id": 1,
       "name": "test",
+      "categoryId": 1,
       "quantity": 2
+    },
+    {
+      "items": "trekking poles",
+      "userId": 1,
+      "categoryId": null,
+      "id": 2
     }
   ]
 }
