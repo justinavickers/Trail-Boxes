@@ -17,7 +17,7 @@ export default Object.create(null, {
 
   getBoxesSorted: {
     value: function (activeUser) {
-      return fetch(`${Settings.remoteURL}/boxes?/userId=${activeUser}&_sort=date&_order=asc`)
+      return fetch(`${Settings.remoteURL}/boxes?userId=${activeUser}&_sort=date&_order=asc`)
         .then(r => r.json())
     }
   },
@@ -27,7 +27,6 @@ export default Object.create(null, {
       return fetch(`${Settings.remoteURL}/${this.desiredDatabase}/${id}`, {
         method: "DELETE"
       })
-        .then(r => r.json())
         .then(() => fetch(`${Settings.remoteURL}/${this.desiredDatabase}`))
         .then(r => r.json())
     }

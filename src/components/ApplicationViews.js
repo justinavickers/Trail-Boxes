@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
 import UserManager from "../modules/UserManager"
+import ItemManager from "../modules/ItemManager"
 import BoxManager from "../modules/BoxManager";
 import BoxForm from "./Boxes/BoxForm"
+import ItemForm from "./Boxes/ItemForm";
 import BoxList from "./Boxes/BoxList"
 import BoxEditForm from "./Boxes/BoxEditForm"
 import Container from "./Map/Container"
@@ -10,9 +12,15 @@ import Container from "./Map/Container"
 class ApplicationViews extends Component {
   state = {
     boxes: [],
-    itemType: [],
+    categories: [],
     items: [],
     users: []
+  }
+
+  addItems = object => {
+    return ItemManager.post(object)
+    .then(() => ItemManager.getBoxesSorted())
+    .then(items => this.setState({items: items}));
   }
 
   updateBoxes = editedObject => {
@@ -24,9 +32,16 @@ class ApplicationViews extends Component {
   };
 
   addBoxes = obj => {
+    let newBox = null
     return BoxManager.post(obj)
-      .then(() => BoxManager.getBoxesSorted())
-      .then(boxes => this.setState({ boxes: boxes }));
+    .then((createdBox) => {
+      newBox = createdBox
+    return BoxManager.getBoxesSorted()
+    })
+    .then(boxes => {
+      this.setState({ boxes: boxes })
+      return newBox
+    })
   };
 
   deleteBoxes = id => {
@@ -38,7 +53,7 @@ class ApplicationViews extends Component {
     BoxManager.getBoxesSorted().then(boxes => this.setState({ boxes: boxes }));
     UserManager.getAll().then(users => this.setState({ users: users }))
     BoxManager.getBoxesSorted().then(items => this.setState({ items: items}))
-    BoxManager.getAll().then(itemType => this.setState({itemType: itemType}))
+    BoxManager.getAll().then(categories => this.setState({categories: categories}))
   }
 
   render() {
@@ -76,12 +91,24 @@ class ApplicationViews extends Component {
               <BoxForm
                 boxes={this.state.boxes}
                 addBoxes={this.addBoxes}
-                addItems={this.addItems}
                 {...props}
               />
+
             );
           }}
         />
+
+        <Route exact path="/items/new"
+        render={props => {
+          return (
+          <ItemForm
+          addItems={this.addItems}
+          {...props}
+          />
+          );
+        }}
+        />
+
         <Route
           exact
           path="/boxes/:boxId(\d+)/edit"

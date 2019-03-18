@@ -1,5 +1,68 @@
 {
-  "boxes": [],
+  "boxes": [
+    {
+      "date": "2019-03-20",
+      "street": "123 Lane road!",
+      "city": "Unicorn",
+      "state": "TN",
+      "zipcode": "37211",
+      "userId": 1,
+      "id": 2
+    },
+    {
+      "date": "2019-03-19",
+      "street": "123 Lane road!",
+      "city": "Unicorn",
+      "state": "TN",
+      "zipcode": "37211",
+      "userId": 1,
+      "id": 3
+    },
+    {
+      "date": "2019-03-20",
+      "street": "15563 Old Hickory Blvd.",
+      "city": "Nashville",
+      "state": "Tennessee",
+      "zipcode": "37211",
+      "id": 4
+    },
+    {
+      "date": "2019-03-20",
+      "street": "15563 Old Hickory Blvd.",
+      "city": "Nashville",
+      "state": "Tennessee",
+      "zipcode": "37211",
+      "userId": 1,
+      "id": 6
+    },
+    {
+      "date": "2019-03-13",
+      "street": "123 Lane road!",
+      "city": "Unicorn",
+      "state": "TN",
+      "zipcode": "37211",
+      "userId": 1,
+      "id": 7
+    },
+    {
+      "date": "2019-03-19",
+      "street": "123 Lane road!",
+      "city": "Unicorn",
+      "state": "TN",
+      "zipcode": "37211",
+      "userId": 1,
+      "id": 8
+    },
+    {
+      "date": "2019-03-19",
+      "street": "123 Lane road!",
+      "city": "Unicorn",
+      "state": "TN",
+      "zipcode": "37211",
+      "userId": 1,
+      "id": 9
+    }
+  ],
   "users": [
     {
       "username": "Calm_Neptune",
@@ -38,9 +101,31 @@
   ],
   "items": [
     {
-      "id": 1,
-      "name": "test",
-      "quantity": 2
+      "items": "trekking poles",
+      "userId": 1,
+      "categoryId": 3,
+      "id": 1
+    },
+    {
+      "items": "hammock",
+      "userId": 1,
+      "categoryId": 3,
+      "boxId": null,
+      "id": 2
+    },
+    {
+      "items": "band aid",
+      "userId": 1,
+      "categoryId": 2,
+      "boxId": null,
+      "id": 3
+    },
+    {
+      "items": "band aid",
+      "userId": 1,
+      "categoryId": 2,
+      "boxId": 9,
+      "id": 4
     }
   ]
 }
