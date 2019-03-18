@@ -8,7 +8,7 @@ export default class BoxForm extends Component {
     city: "",
     state: "",
     zipcode: "",
-    userId: "",
+    userId: ""
   };
 
 
@@ -33,7 +33,6 @@ export default class BoxForm extends Component {
         zipcode: this.state.zipcode,
         userId: parseInt(sessionStorage.getItem("credentials"))
       }
-      console.log(object)
       this.props.addBoxes(object)
       .then((newBox) => this.props.history.push(
         {

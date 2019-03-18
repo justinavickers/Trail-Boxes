@@ -17,6 +17,7 @@ class ApplicationViews extends Component {
     users: []
   }
 
+
   addItems = object => {
     return ItemManager.post(object)
     .then(() => ItemManager.getBoxesSorted())
@@ -36,7 +37,7 @@ class ApplicationViews extends Component {
     return BoxManager.post(obj)
     .then((createdBox) => {
       newBox = createdBox
-    return BoxManager.getBoxesSorted()
+      return BoxManager.getBoxesSorted(this.props.activeUser.id)
     })
     .then(boxes => {
       this.setState({ boxes: boxes })
@@ -50,10 +51,10 @@ class ApplicationViews extends Component {
   };
 
   componentDidMount() {
-    BoxManager.getBoxesSorted().then(boxes => this.setState({ boxes: boxes }));
+    BoxManager.getBoxesSorted(this.props.activeUser.id).then(boxes => this.setState({ boxes: boxes }));
     UserManager.getAll().then(users => this.setState({ users: users }))
-    BoxManager.getBoxesSorted().then(items => this.setState({ items: items}))
-    BoxManager.getAll().then(categories => this.setState({categories: categories}))
+    BoxManager.getBoxesSorted(this.props.activeUser.id).then(items => this.setState({ items: items}))
+    BoxManager.getAll().then(boxes => this.setState({boxes: boxes}))
   }
 
   render() {
