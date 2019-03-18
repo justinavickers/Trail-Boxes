@@ -1,13 +1,21 @@
 {
   "boxes": [
     {
-      "date": "2019-03-19",
-      "street": "123 Lane road!",
+      "date": "2019-03-21",
+      "street": "PeeWee Hermans House",
+      "city": "IDK",
+      "state": "California",
+      "zipcode": "202020",
+      "userId": 1,
+      "id": 3
+    },
+    {
+      "date": "2019-03-01",
+      "street": "123 Lane road!!!!",
       "city": "Unicorn",
       "state": "TN",
       "zipcode": "37211",
-      "userId": 1,
-      "id": 1
+      "id": 4
     }
   ],
   "users": [
@@ -48,11 +56,11 @@
   ],
   "items": [
     {
-      "items": "band aid",
+      "name": "hammock",
       "userId": 1,
-      "categoryId": 2,
-      "boxId": 1,
-      "id": 1
+      "categoryId": 3,
+      "boxId": 4,
+      "id": 4
     }
   ]
 }

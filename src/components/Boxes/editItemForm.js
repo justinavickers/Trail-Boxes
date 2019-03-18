@@ -1,12 +1,9 @@
 import React, { Component } from "react";
-import "./boxes.css";
-export default class ItemForm extends Component {
+import ItemManager from "../../modules/ItemManager"
+export default class EditItemForm extends Component {
   // Set initial state
   state = {
-    userId: "",
-    name: "",
-    categoryId: "1",
-    boxId: ""
+    name: ""
   };
 
 
@@ -17,28 +14,40 @@ export default class ItemForm extends Component {
     this.setState(stateToChange);
   }
 
-  constructNewItems = evt => {
+  updateExistingItems = evt => {
     evt.preventDefault()
     if (this.state.categories === "" && this.state.name === "") {
       alert("Please fill out form.")
     } else {
-      const itemObject = {
-        name: this.state.name,
-        userId: parseInt(sessionStorage.getItem("credentials")),
-        categoryId: parseInt(this.state.categoryId),
-        boxId: parseInt(this.props.history.location.state.boxId)
+      const editedItemObject = {
+        categoryId: this.state.categoryId,
+        boxId: this.state.boxId,
+        userId: this.state.userId,
+        id: this.props.match.params.itemId,
+        name: this.state.name
       }
-      console.log(itemObject)
-      this.props.addItems(itemObject)
-
+      console.log(editedItemObject)
+      this.props.updateItems(editedItemObject)
     }
   }
 
+  componentDidMount() {
+    ItemManager.get(this.props.match.params.itemId)
+    .then(item => {
+      this.setState({
+        categoryId: item.categoryId,
+        boxId: item.boxId,
+        id: item.id,
+        name: item.name,
+        userId: item.userId
+      })
+    })
+  }
+
   render() {
-    console.log("props are:", this.props)
     return (
       <React.Fragment>
-        <form onSubmit={this.constructNewItems} className="boxForm">
+        <form onSubmit={this.updateExistingItems} className="boxForm">
           <div className="form-group">
             <label htmlFor="quantity">Category</label>
           <select onChange={this.handleFieldChange} id="categoryId" className="dd-list">
@@ -208,7 +217,7 @@ export default class ItemForm extends Component {
             </input>
           </div>
           <button
-          onClick={this.constructNewItems}
+          // onClick={this.updateExistingItems}
             type="submit"
             className="btn btn-primary"
           >

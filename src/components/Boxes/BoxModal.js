@@ -30,8 +30,20 @@ class BoxModal extends React.Component {
             <p>{this.props.currentBox.city}</p>
             <p>{this.props.currentBox.state}</p>
             <p>{this.props.currentBox.zipcode}</p>
-            <p>{this.props.currentBox.items}</p>
-            <p>{this.props.currentBox.categories}</p>
+
+            {
+              this.props.items.filter(currentItem => currentItem.boxId === this.props.currentBox.id )
+              .map(currentItem => {
+                return (
+                  <React.Fragment>
+                  <p key={currentItem.id}>{currentItem.name}</p>
+                  <Button onClick={() => this.props.deleteItem(currentItem.id)}>Delete</Button>
+                  <Link className="editItem" to={`/items/${currentItem.id}/edit`} >Edit</Link>
+                  </React.Fragment>
+                )
+              })
+            }
+
           </ModalBody>
           <ModalFooter>
                 <Link className="editLink" to={`/boxes/${this.props.currentBox.id}/edit`} >Edit</Link>

@@ -22,7 +22,7 @@ class BoxList extends Component {
             this.props.boxes.map(box =>
               <div className="box" key={box.id} >
                 <p>{box.date}</p>
-            <BoxModal currentBox={box} {...this.props}></BoxModal>
+            <BoxModal items={this.props.items} deleteItem={this.props.deleteItem}currentBox={box} {...this.props}></BoxModal>
               </div>
             )
           }

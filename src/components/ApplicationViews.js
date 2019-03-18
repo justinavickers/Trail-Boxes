@@ -8,6 +8,7 @@ import ItemForm from "./Boxes/ItemForm";
 import BoxList from "./Boxes/BoxList"
 import BoxEditForm from "./Boxes/BoxEditForm"
 import Container from "./Map/Container"
+import EditItemForm from "./Boxes/editItemForm";
 
 class ApplicationViews extends Component {
   state = {
@@ -20,8 +21,16 @@ class ApplicationViews extends Component {
 
   addItems = object => {
     return ItemManager.post(object)
-    .then(() => ItemManager.getBoxesSorted())
-    .then(items => this.setState({items: items}));
+      .then(() => ItemManager.getAll())
+      .then(items => this.setState({ items: items }));
+  }
+
+  updateItems = editedItemObject => {
+    return ItemManager.put(editedItemObject)
+      .then(() => {
+        return ItemManager.getAll();
+      })
+      .then(items => this.setState({ items: items }))
   }
 
   updateBoxes = editedObject => {
@@ -35,37 +44,45 @@ class ApplicationViews extends Component {
   addBoxes = obj => {
     let newBox = null
     return BoxManager.post(obj)
-    .then((createdBox) => {
-      newBox = createdBox
-      return BoxManager.getBoxesSorted(this.props.activeUser.id)
-    })
-    .then(boxes => {
-      this.setState({ boxes: boxes })
-      return newBox
-    })
+      .then((createdBox) => {
+        newBox = createdBox
+        return BoxManager.getBoxesSorted(this.props.activeUser.id)
+      })
+      .then(boxes => {
+        this.setState({ boxes: boxes })
+        return newBox
+      })
   };
+
+  deleteItem = id => {
+    return ItemManager.deleteAndList(id)
+    .then(items => this.setState({items: items}))
+  }
 
   deleteBoxes = id => {
     return BoxManager.deleteAndList(id)
-    .then(boxes => this.setState({ boxes: boxes }));
+      .then(boxes => this.setState({ boxes: boxes }));
   };
 
   componentDidMount() {
-    BoxManager.getBoxesSorted(this.props.activeUser.id).then(boxes => this.setState({ boxes: boxes }));
+    BoxManager.getBoxesSorted(sessionStorage.getItem("credentials")).then(boxes => {
+      this.setState({ boxes: boxes })
+    });
     UserManager.getAll().then(users => this.setState({ users: users }))
-    BoxManager.getBoxesSorted(this.props.activeUser.id).then(items => this.setState({ items: items}))
-    BoxManager.getAll().then(boxes => this.setState({boxes: boxes}))
+    // BoxManager.getBoxesSorted(this.props.activeUser.id).then(items => this.setState({ items: items}))
+    // BoxManager.getAll().then(boxes => this.setState({boxes: boxes}))
+    ItemManager.getAll().then(items => this.setState({ items: items }))
   }
 
   render() {
     return (
       <React.Fragment>
         <Route exact path="/map"
-        render={props => {
-          return (
-            <Container />
-          )
-        }}
+          render={props => {
+            return (
+              <Container />
+            )
+          }}
 
         ></Route>
         <Route
@@ -74,8 +91,10 @@ class ApplicationViews extends Component {
           render={props => {
             return (
               <BoxList
+                items={this.state.items}
                 boxes={this.state.boxes}
                 addBoxes={this.addBoxes}
+                deleteItem={this.deleteItem}
                 deleteBoxes={this.deleteBoxes}
                 updateBoxes={this.updateBoxes}
                 users={this.state.users}
@@ -100,14 +119,26 @@ class ApplicationViews extends Component {
         />
 
         <Route exact path="/items/new"
-        render={props => {
-          return (
-          <ItemForm
-          addItems={this.addItems}
-          {...props}
-          />
-          );
-        }}
+          render={props => {
+            return (
+              <ItemForm
+                addItems={this.addItems}
+                {...props}
+              />
+            );
+          }}
+        />
+
+        <Route exact path="/items/:itemId(\d+)/edit"
+          render={props => {
+            return (
+              <EditItemForm
+                items={this.state.items}
+                updateItems={this.updateItems}
+                {...props}
+              />
+            );
+          }}
         />
 
         <Route
