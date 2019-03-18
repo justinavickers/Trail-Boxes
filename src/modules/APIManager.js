@@ -17,7 +17,7 @@ export default Object.create(null, {
 
   getBoxesSorted: {
     value: function (activeUser) {
-      return fetch(`${Settings.remoteURL}/boxes?userId=${activeUser}&_sort=date&_order=asc`)
+      return fetch(`${Settings.remoteURL}/boxes/?userId=${activeUser}&_sort=date&_order=asc`)
         .then(r => r.json())
     }
   },
