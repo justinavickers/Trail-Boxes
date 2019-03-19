@@ -30,6 +30,7 @@ class BoxModal extends React.Component {
             <p>{this.props.currentBox.city}</p>
             <p>{this.props.currentBox.state}</p>
             <p>{this.props.currentBox.zipcode}</p>
+            <p>{this.props.currentBox.quantity}</p>
 
             {
               this.props.items.filter(currentItem => currentItem.boxId === this.props.currentBox.id )

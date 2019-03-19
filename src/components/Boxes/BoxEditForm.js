@@ -38,6 +38,7 @@ export default class BoxEditForm extends Component {
         .then(() => this.props.history.push("/boxes"))
     }
   }
+
   componentDidMount() {
     BoxManager.get(this.props.match.params.boxId)
       .then(box => {
@@ -123,6 +124,13 @@ export default class BoxEditForm extends Component {
           >
             Submit
           </button>
+          {/* <button
+          onClick={}
+            type="submit"
+            className="btn btn-primary"
+          >
+            Add Items
+          </button> */}
         </form>
       </React.Fragment>
     );
