@@ -31,6 +31,7 @@ export default class BoxEditForm extends Component {
         city: this.state.city,
         state: this.state.state,
         zipcode: this.state.zipcode,
+        userId: parseInt(sessionStorage.getItem("credentials")),
         id: this.props.match.params.boxId
       }
 

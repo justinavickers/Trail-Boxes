@@ -36,10 +36,11 @@ class ApplicationViews extends Component {
 
   updateBoxes = editedObject => {
     return BoxManager.put(editedObject)
-      .then(() => {
-        return BoxManager.getAll();
-      })
-      .then(boxes => this.setState({ boxes: boxes }));
+    .then(() => {
+      BoxManager.getBoxesSorted(sessionStorage.getItem("credentials")).then(boxes => {
+        this.setState({ boxes: boxes })
+      });
+    })
   };
 
   addBoxes = obj => {
