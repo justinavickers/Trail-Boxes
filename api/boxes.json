@@ -1,21 +1,13 @@
 {
   "boxes": [
     {
-      "date": "2019-03-21",
-      "street": "PeeWee Hermans House",
-      "city": "IDK",
-      "state": "California",
-      "zipcode": "202020",
-      "userId": 1,
-      "id": 3
-    },
-    {
-      "date": "2019-03-01",
-      "street": "123 Lane road!!!!",
-      "city": "Unicorn",
-      "state": "TN",
+      "date": "2019-03-20",
+      "street": "15563 Old Hickory Blvd.",
+      "city": "Nashville",
+      "state": "Tennessee",
       "zipcode": "37211",
-      "id": 4
+      "userId": 1,
+      "id": 1
     }
   ],
   "users": [
@@ -56,11 +48,12 @@
   ],
   "items": [
     {
-      "name": "hammock",
+      "name": "Ultra Light Rain coat",
+      "quantity": "",
       "userId": 1,
-      "categoryId": 3,
-      "boxId": 4,
-      "id": 4
+      "categoryId": 4,
+      "boxId": 1,
+      "id": 1
     }
   ]
 }
