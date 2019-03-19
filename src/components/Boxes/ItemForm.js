@@ -36,6 +36,30 @@ export default class ItemForm extends Component {
     }
   }
 
+  addMoreItems = evt => {
+    evt.preventDefault()
+    if (this.state.categories === "" && this.state.name === "") {
+      alert("Please fill out form.")
+    } else {
+      const itemObject = {
+        name: this.state.name,
+        quantity: this.state.quantity,
+        userId: parseInt(sessionStorage.getItem("credentials")),
+        categoryId: parseInt(this.state.categoryId),
+        boxId: parseInt(this.props.history.location.state.boxId)
+      }
+      console.log(itemObject)
+      this.props.addItems(itemObject)
+      .then((newBox) => this.props.history.push(
+        {
+          pathname: "/items",
+          state: { boxId: newBox.id }
+        }
+        ))
+
+    }
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -83,7 +107,7 @@ export default class ItemForm extends Component {
             Done
           </button>
           <button
-          onClick={this.constructNewItems}
+          onClick={this.addMoreItems}
             type="submit"
             className="btn btn-primary"
           >

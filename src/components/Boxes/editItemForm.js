@@ -68,7 +68,10 @@ export default class EditItemForm extends Component {
               <option value="4" className="apparel">Apparel</option>
             </select>
             <label htmlFor="quantity">Quantity</label>
-          <select onChange={this.handleFieldChange} id="quantity" className="quantity">
+          <select onChange={this.handleFieldChange}
+          value={this.state.quantity}
+          id="quantity"
+          className="quantity">
           <option value="1" className="1">1</option>
           <option value="2" className="2">2</option>
           <option value="3" className="3">3</option>
