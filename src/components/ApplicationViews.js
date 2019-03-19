@@ -9,6 +9,7 @@ import BoxList from "./Boxes/BoxList"
 import BoxEditForm from "./Boxes/BoxEditForm"
 import Container from "./Map/Container"
 import EditItemForm from "./Boxes/editItemForm";
+import AddItemForm from "./Boxes/AddItemForm"
 
 class ApplicationViews extends Component {
   state = {
@@ -56,9 +57,9 @@ class ApplicationViews extends Component {
 
   deleteItem = id => {
     return ItemManager.delete(id)
-    .then(() => {
-      ItemManager.getAllItems().then(items => this.setState({ items: items }))
-    })
+      .then(() => {
+        ItemManager.getAllItems().then(items => this.setState({ items: items }))
+      })
   }
 
   deleteBoxes = id => {
@@ -128,6 +129,17 @@ class ApplicationViews extends Component {
           render={props => {
             return (
               <ItemForm
+                addItems={this.addItems}
+                {...props}
+              />
+            );
+          }}
+        />
+
+        <Route exact path="/items/new/:boxId(\d+)"
+          render={props => {
+            return (
+              <AddItemForm
                 addItems={this.addItems}
                 {...props}
               />

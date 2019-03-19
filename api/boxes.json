@@ -35,6 +35,15 @@
       "zipcode": "202020",
       "userId": 1,
       "id": 8
+    },
+    {
+      "date": "2019-03-20",
+      "street": "123 Lane road!",
+      "city": "Unicorn",
+      "state": "TN",
+      "zipcode": "37211",
+      "userId": 4,
+      "id": 9
     }
   ],
   "users": [
@@ -61,23 +70,31 @@
       "last_name": "Carpenter",
       "email": "warner@warner.com",
       "id": 3
+    },
+    {
+      "username": "nicky",
+      "password": "nick",
+      "first_name": "Nicholas",
+      "last_name": "Fell",
+      "email": "nhfell@hotmail.com",
+      "id": 4
     }
   ],
   "categories": [
     {
-      "name": "apparel",
+      "name": "Apparel",
       "id": 1
     },
     {
-      "name": "first aid",
+      "name": "First Aid",
       "id": 2
     },
     {
-      "name": "gear",
+      "name": "Gear",
       "id": 3
     },
     {
-      "name": "food",
+      "name": "Food",
       "id": 4
     }
   ],
@@ -177,6 +194,46 @@
       "categoryId": 2,
       "boxId": 8,
       "id": 22
+    },
+    {
+      "categoryId": 1,
+      "boxId": 9,
+      "userId": 4,
+      "id": 23,
+      "name": "long sleeve t-shirts",
+      "quantity": "3"
+    },
+    {
+      "name": "tent",
+      "quantity": "1",
+      "userId": 4,
+      "categoryId": 3,
+      "boxId": 9,
+      "id": 25
+    },
+    {
+      "name": "dried pineapple",
+      "quantity": "1",
+      "userId": 4,
+      "categoryId": 4,
+      "boxId": 9,
+      "id": 26
+    },
+    {
+      "name": "pants",
+      "quantity": "1",
+      "userId": 4,
+      "categoryId": 1,
+      "boxId": 9,
+      "id": 27
+    },
+    {
+      "name": "rainbow socks",
+      "quantity": "1",
+      "userId": 4,
+      "categoryId": 1,
+      "boxId": 9,
+      "id": 28
     }
   ]
 }
