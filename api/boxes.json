@@ -26,6 +26,15 @@
       "zipcode": "37211",
       "userId": 3,
       "id": 6
+    },
+    {
+      "date": "2019-03-28",
+      "street": "PeeWee Hermans House",
+      "city": "IDK",
+      "state": "California",
+      "zipcode": "202020",
+      "userId": 1,
+      "id": 8
     }
   ],
   "users": [
@@ -73,30 +82,6 @@
     }
   ],
   "items": [
-    {
-      "name": "beef",
-      "quantity": "",
-      "userId": 1,
-      "categoryId": 1,
-      "boxId": 4,
-      "id": 5
-    },
-    {
-      "name": "ointment",
-      "quantity": "",
-      "userId": 1,
-      "categoryId": 2,
-      "boxId": 4,
-      "id": 6
-    },
-    {
-      "name": "tent",
-      "quantity": "",
-      "userId": 1,
-      "categoryId": 3,
-      "boxId": 4,
-      "id": 7
-    },
     {
       "name": "socks",
       "quantity": "1",
@@ -168,6 +153,30 @@
       "categoryId": 4,
       "boxId": 6,
       "id": 16
+    },
+    {
+      "name": "pants",
+      "quantity": "1",
+      "userId": 1,
+      "categoryId": 1,
+      "boxId": 8,
+      "id": 20
+    },
+    {
+      "name": "bug spray",
+      "quantity": "1",
+      "userId": 1,
+      "categoryId": 2,
+      "boxId": 8,
+      "id": 21
+    },
+    {
+      "name": "scissors",
+      "quantity": "1",
+      "userId": 1,
+      "categoryId": 2,
+      "boxId": 8,
+      "id": 22
     }
   ]
 }

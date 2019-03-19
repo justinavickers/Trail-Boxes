@@ -15,6 +15,13 @@ export default Object.create(null, {
     }
   },
 
+  getAllItems: {
+    value: function () {
+      return fetch(`${Settings.remoteURL}/items?_expand=category&_sort=categoryId`)
+      .then(r => r.json())
+    }
+  },
+
   getBoxesSorted: {
     value: function (activeUser) {
       return fetch(`${Settings.remoteURL}/boxes/?userId=${activeUser}&_sort=date&_order=asc`)
@@ -29,6 +36,13 @@ export default Object.create(null, {
       })
         .then(() => fetch(`${Settings.remoteURL}/${this.desiredDatabase}`))
         .then(r => r.json())
+    }
+  },
+  delete: {
+    value: function (id) {
+      return fetch(`${Settings.remoteURL}/${this.desiredDatabase}/${id}`, {
+        method: "DELETE"
+      })
     }
   },
 

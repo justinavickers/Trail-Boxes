@@ -36,7 +36,7 @@ class BoxModal extends React.Component {
               .map(currentItem => {
                 return (
                   <React.Fragment>
-                  <p key={currentItem.id}>{currentItem.name} {currentItem.quantity} </p>
+                  <p key={currentItem.id}>{currentItem.name} {currentItem.quantity} {currentItem.category.name} </p>
                   <Button onClick={() => this.props.deleteItem(currentItem.id)}>Delete</Button>
                   <Link className="editItem" to={`/items/${currentItem.id}/edit`} >Edit</Link>
                   </React.Fragment>
