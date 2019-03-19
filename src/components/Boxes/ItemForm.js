@@ -7,7 +7,7 @@ export default class ItemForm extends Component {
     name: "",
     categoryId: "1",
     boxId: "",
-    quantity: ""
+    quantity: "1"
   };
 
 
@@ -88,7 +88,7 @@ export default class ItemForm extends Component {
           </div>
           <div className="form-group">
           <br></br>
-            <label htmlFor="quantity">Item</label>
+            <label htmlFor="item">Item</label>
             <input
               defaultValue=""
               className="form-control"

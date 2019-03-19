@@ -67,8 +67,11 @@ export default class EditItemForm extends Component {
               <option value="3" className="gear">Gear</option>
               <option value="4" className="apparel">Apparel</option>
             </select>
+
+
             <label htmlFor="quantity">Quantity</label>
           <select onChange={this.handleFieldChange}
+
           value={this.state.quantity}
           id="quantity"
           className="quantity">
@@ -99,7 +102,6 @@ export default class EditItemForm extends Component {
           </div>
 
           <button
-            // onClick={this.updateExistingItems}
             type="submit"
             className="btn btn-primary"
           >

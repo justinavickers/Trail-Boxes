@@ -61,7 +61,11 @@ class ApplicationViews extends Component {
 
   deleteBoxes = id => {
     return BoxManager.deleteAndList(id)
-      .then(boxes => this.setState({ boxes: boxes }));
+      .then(() => {
+        BoxManager.getBoxesSorted(sessionStorage.getItem("credentials")).then(boxes => {
+          this.setState({ boxes: boxes })
+        });
+      })
   };
 
   componentDidMount() {
