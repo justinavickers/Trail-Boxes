@@ -34,6 +34,9 @@ export default class EditItemForm extends Component {
       }
       console.log(editedItemObject)
       this.props.updateItems(editedItemObject)
+      .then(() => {
+        this.props.history.push("/boxes")
+      })
     }
   }
 
@@ -62,10 +65,10 @@ export default class EditItemForm extends Component {
               value={this.state.categoryId}
               id="categoryId"
               className="dd-list">
-              <option value="1" className="food">Food</option>
+              <option value="1" className="apparel">Apparel</option>
               <option value="2" className="firstAid">First Aid</option>
               <option value="3" className="gear">Gear</option>
-              <option value="4" className="apparel">Apparel</option>
+              <option value="4" className="food">Food</option>
             </select>
 
 

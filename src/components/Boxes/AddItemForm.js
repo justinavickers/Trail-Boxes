@@ -30,9 +30,10 @@ export default class AddItemForm extends Component {
         categoryId: parseInt(this.state.categoryId),
         boxId: parseInt(this.props.match.params.boxId)
       }
-      console.log(itemObject)
       this.props.addItems(itemObject)
-
+      .then(() => {
+        this.props.history.push("/boxes")
+      })
     }
   }
 
