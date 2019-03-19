@@ -7,7 +7,7 @@ export default class ItemForm extends Component {
     name: "",
     categoryId: "1",
     boxId: "",
-    quantity: ""
+    quantity: "1"
   };
 
 
@@ -67,10 +67,10 @@ export default class ItemForm extends Component {
           <div className="form-group">
             <label htmlFor="category">Category</label>
           <select onChange={this.handleFieldChange} id="categoryId" className="dd-list">
-            <option value="1" className="food">Food</option>
+            <option value="1" className="apparel">Apparel</option>
             <option value="2" className="firstAid">First Aid</option>
             <option value="3" className="gear">Gear</option>
-            <option value="4" className="apparel">Apparel</option>
+            <option value="4" className="food">Food</option>
           </select>
         <label htmlFor="quantity">Quantity</label>
           <select onChange={this.handleFieldChange} id="quantity" className="quantity">
@@ -88,7 +88,7 @@ export default class ItemForm extends Component {
           </div>
           <div className="form-group">
           <br></br>
-            <label htmlFor="quantity">Item</label>
+            <label htmlFor="item">Item</label>
             <input
               defaultValue=""
               className="form-control"

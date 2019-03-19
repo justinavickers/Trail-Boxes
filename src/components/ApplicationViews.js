@@ -21,14 +21,14 @@ class ApplicationViews extends Component {
 
   addItems = object => {
     return ItemManager.post(object)
-      .then(() => ItemManager.getAll())
+      .then(() => ItemManager.getAllItems())
       .then(items => this.setState({ items: items }));
   }
 
   updateItems = editedItemObject => {
     return ItemManager.put(editedItemObject)
       .then(() => {
-        return ItemManager.getAll();
+        return ItemManager.getAllItems();
       })
       .then(items => this.setState({ items: items }))
   }
@@ -55,13 +55,19 @@ class ApplicationViews extends Component {
   };
 
   deleteItem = id => {
-    return ItemManager.deleteAndList(id)
-    .then(items => this.setState({items: items}))
+    return ItemManager.delete(id)
+    .then(() => {
+      ItemManager.getAllItems().then(items => this.setState({ items: items }))
+    })
   }
 
   deleteBoxes = id => {
     return BoxManager.deleteAndList(id)
-      .then(boxes => this.setState({ boxes: boxes }));
+      .then(() => {
+        BoxManager.getBoxesSorted(sessionStorage.getItem("credentials")).then(boxes => {
+          this.setState({ boxes: boxes })
+        });
+      })
   };
 
   componentDidMount() {
@@ -69,7 +75,7 @@ class ApplicationViews extends Component {
       this.setState({ boxes: boxes })
     });
     UserManager.getAll().then(users => this.setState({ users: users }))
-    ItemManager.getAll().then(items => this.setState({ items: items }))
+    ItemManager.getAllItems().then(items => this.setState({ items: items }))
     // BoxManager.getBoxesSorted(this.props.activeUser.id).then(items => this.setState({ items: items}))
     // BoxManager.getAll().then(boxes => this.setState({boxes: boxes}))
   }
