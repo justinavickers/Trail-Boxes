@@ -78,8 +78,6 @@ class ApplicationViews extends Component {
     });
     UserManager.getAll().then(users => this.setState({ users: users }))
     ItemManager.getAllItems().then(items => this.setState({ items: items }))
-    // BoxManager.getBoxesSorted(this.props.activeUser.id).then(items => this.setState({ items: items}))
-    // BoxManager.getAll().then(boxes => this.setState({boxes: boxes}))
   }
 
   render() {
