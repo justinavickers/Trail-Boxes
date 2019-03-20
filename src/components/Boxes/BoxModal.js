@@ -26,7 +26,17 @@ class BoxModal extends React.Component {
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}>Contents of Your Resupply Box
           <br></br>
-           <Link className="addItemLink" to={`/items/new/${this.props.currentBox.id}`}>Add Items</Link>
+           <Button className="addItemLink"
+            // to={`/items/new/${this.props.currentBox.id}`}
+            onClick={() =>
+              this.props.history.push(
+                {
+                  pathname: "/items/new",
+                  state: { boxId: this.props.currentBox.id }
+                }
+                )
+            }
+            >Add Items</Button>
           </ModalHeader>
           <ModalBody>
             <p>{this.props.currentBox.street}</p>

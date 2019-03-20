@@ -37,6 +37,29 @@ export default class AddItemForm extends Component {
     }
   }
 
+  addMoreItems = evt => {
+    evt.preventDefault()
+    if (this.state.categories === "" && this.state.name === "") {
+      alert("Please fill out form.")
+    } else {
+      const itemObject = {
+        name: this.state.name,
+        quantity: this.state.quantity,
+        userId: parseInt(sessionStorage.getItem("credentials")),
+        categoryId: parseInt(this.state.categoryId),
+        boxId: parseInt(this.props.history.location.state.boxId)
+      }
+      this.props.addItems(itemObject)
+      .then(() => this.setState({
+        name: "",
+        categoryId: "1",
+        quantity: "1"
+      }))
+
+    }
+  }
+
+
 
 
   render() {
@@ -45,14 +68,14 @@ export default class AddItemForm extends Component {
         <form onSubmit={this.constructNewItems} className="boxForm">
           <div className="form-group">
             <label htmlFor="category">Category</label>
-          <select onChange={this.handleFieldChange} id="categoryId" className="dd-list">
+            <select value={this.state.categoryId}onChange={this.handleFieldChange} id="categoryId" className="dd-list">
             <option value="1" className="apparel">Apparel</option>
             <option value="2" className="firstAid">First Aid</option>
             <option value="3" className="gear">Gear</option>
             <option value="4" className="food">Food</option>
           </select>
         <label htmlFor="quantity">Quantity</label>
-          <select onChange={this.handleFieldChange} id="quantity" className="quantity">
+        <select value={this.state.quantity} onChange={this.handleFieldChange} id="quantity" className="quantity">
           <option value="1" className="1">1</option>
           <option value="2" className="2">2</option>
           <option value="3" className="3">3</option>
@@ -69,7 +92,7 @@ export default class AddItemForm extends Component {
           <br></br>
             <label htmlFor="item">Item</label>
             <input
-              defaultValue=""
+              value={this.state.name}
               className="form-control"
               onChange={this.handleFieldChange}
               id="name"
@@ -84,6 +107,13 @@ export default class AddItemForm extends Component {
             className="btn btn-primary"
           >
             Done
+          </button>
+          <button
+          onClick={this.addMoreItems}
+            type="submit"
+            className="btn btn-primary"
+          >
+            Add More
           </button>
         </form>
       </React.Fragment>

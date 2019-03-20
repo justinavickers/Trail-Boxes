@@ -1,66 +1,13 @@
 {
   "boxes": [
     {
-      "date": "2019-03-21",
-      "street": "PeeWee Hermans House!",
-      "city": "IDK",
-      "state": "California",
-      "zipcode": "202020",
-      "id": 4
-    },
-    {
-      "date": "2019-03-20",
-      "street": "123 Lane road!",
-      "city": "Unicorn",
-      "state": "TN",
-      "zipcode": "37211",
-      "userId": 2,
-      "id": 5
-    },
-    {
-      "date": "2019-03-23",
-      "street": "15563 Old Hickory Blvd.",
-      "city": "Nashville",
-      "state": "Tennessee",
-      "zipcode": "37211",
-      "userId": 3,
-      "id": 6
-    },
-    {
-      "date": "2019-03-20",
-      "street": "123 Lane road!",
-      "city": "Unicorn",
-      "state": "TN",
-      "zipcode": "37211",
-      "userId": 4,
-      "id": 9
-    },
-    {
-      "date": "2019-03-20",
-      "street": "209 Paul Revere Lane",
-      "city": "LaVergne",
-      "state": "Tennessee",
-      "zipcode": "37086",
-      "userId": 3,
-      "id": 10
-    },
-    {
-      "date": "2019-03-20",
-      "street": "500 Interstate Blvd",
-      "city": "Nashville",
-      "state": "TN",
-      "zipcode": "37211",
+      "date": "2019-03-22",
+      "street": "152 Orvin Lance Drive",
+      "city": "Blue Ridge",
+      "state": "Georgia",
+      "zipcode": " 30513",
       "userId": 1,
-      "id": 13
-    },
-    {
-      "date": "2019-03-20",
-      "street": "15563 Old Hickory Blvd.",
-      "city": "Nashville",
-      "state": "Tennessee",
-      "zipcode": "37211",
-      "userId": 1,
-      "id": 14
+      "id": 1
     }
   ],
   "users": [
@@ -117,204 +64,84 @@
   ],
   "items": [
     {
-      "name": "socks",
+      "name": "shirt",
       "quantity": "1",
       "userId": 1,
-      "categoryId": 4,
-      "boxId": 4,
-      "id": 8
+      "categoryId": 1,
+      "boxId": 1,
+      "id": 1
+    },
+    {
+      "name": "band aids",
+      "quantity": "5",
+      "userId": 1,
+      "categoryId": 2,
+      "boxId": 1,
+      "id": 2
+    },
+    {
+      "name": "trekking poles",
+      "quantity": "1",
+      "userId": 1,
+      "categoryId": 3,
+      "boxId": 1,
+      "id": 3
     },
     {
       "name": "rice",
       "quantity": "1",
-      "userId": 2,
-      "categoryId": 1,
-      "boxId": 5,
-      "id": 9
-    },
-    {
-      "name": "water purifier tablets",
-      "quantity": "8",
-      "userId": 2,
-      "categoryId": 2,
-      "boxId": 5,
-      "id": 10
-    },
-    {
-      "name": "pack cover",
-      "quantity": "1",
-      "userId": 2,
-      "categoryId": 3,
-      "boxId": 5,
-      "id": 11
-    },
-    {
-      "name": "shorts",
-      "quantity": "2",
-      "userId": 2,
+      "userId": 1,
       "categoryId": 4,
-      "boxId": 5,
-      "id": 12
-    },
-    {
-      "name": "mushroom tea",
-      "quantity": "1",
-      "userId": 3,
-      "categoryId": 1,
-      "boxId": 6,
-      "id": 13
-    },
-    {
-      "name": "moleskin pads",
-      "quantity": "3",
-      "userId": 3,
-      "categoryId": 2,
-      "boxId": 6,
-      "id": 14
-    },
-    {
-      "categoryId": 3,
-      "boxId": 6,
-      "userId": 3,
-      "id": 15,
-      "name": "slack lines",
-      "quantity": "1"
-    },
-    {
-      "name": "replacement laces",
-      "quantity": "1",
-      "userId": 3,
-      "categoryId": 4,
-      "boxId": 6,
-      "id": 16
-    },
-    {
-      "categoryId": 1,
-      "boxId": 9,
-      "userId": 4,
-      "id": 23,
-      "name": "long sleeve t-shirts",
-      "quantity": "3"
-    },
-    {
-      "name": "tent",
-      "quantity": "1",
-      "userId": 4,
-      "categoryId": 3,
-      "boxId": 9,
-      "id": 25
-    },
-    {
-      "name": "dried pineapple",
-      "quantity": "1",
-      "userId": 4,
-      "categoryId": 4,
-      "boxId": 9,
-      "id": 26
+      "boxId": 1,
+      "id": 4
     },
     {
       "name": "pants",
       "quantity": "1",
-      "userId": 4,
+      "userId": 1,
       "categoryId": 1,
-      "boxId": 9,
-      "id": 27
+      "boxId": 1,
+      "id": 5
     },
     {
-      "name": "rainbow socks",
-      "quantity": "1",
-      "userId": 4,
-      "categoryId": 1,
-      "boxId": 9,
-      "id": 28
-    },
-    {
-      "name": "shirt",
-      "quantity": "1",
-      "userId": 3,
-      "categoryId": 1,
-      "boxId": 10,
-      "id": 29
-    },
-    {
-      "name": "ibuprofen",
-      "quantity": "1",
-      "userId": 3,
-      "categoryId": 2,
-      "boxId": 10,
-      "id": 30
-    },
-    {
-      "name": "band aid",
+      "name": "gauze",
       "quantity": "1",
       "userId": 1,
       "categoryId": 2,
-      "boxId": 13,
-      "id": 36
+      "boxId": 1,
+      "id": 6
     },
     {
-      "categoryId": 1,
-      "boxId": 13,
-      "userId": 1,
-      "id": 37,
-      "name": " tank top",
-      "quantity": "1"
-    },
-    {
-      "name": "potato",
-      "quantity": "1",
-      "userId": 1,
-      "categoryId": 4,
-      "boxId": 13,
-      "id": 38
-    },
-    {
-      "categoryId": "1",
-      "boxId": 13,
-      "userId": 1,
-      "id": 39,
-      "name": "underwear",
-      "quantity": "6"
-    },
-    {
-      "name": "clothing",
+      "name": "jacket",
       "quantity": "1",
       "userId": 1,
       "categoryId": 1,
-      "boxId": 13,
-      "id": 40
+      "boxId": 1,
+      "id": 7
     },
     {
-      "name": "allergy medicine",
+      "name": "slack lines",
       "quantity": "1",
       "userId": 1,
-      "categoryId": 2,
-      "boxId": 14,
-      "id": 41
+      "categoryId": 3,
+      "boxId": 1,
+      "id": 8
     },
     {
       "name": "gloves",
       "quantity": "1",
       "userId": 1,
       "categoryId": 1,
-      "boxId": 14,
-      "id": 42
+      "boxId": 1,
+      "id": 9
     },
     {
-      "name": "slack straps",
-      "quantity": "1",
-      "userId": 1,
-      "categoryId": 3,
-      "boxId": 14,
-      "id": 43
-    },
-    {
-      "name": "shoes",
+      "name": "blue socks",
       "quantity": "1",
       "userId": 1,
       "categoryId": 1,
-      "boxId": 14,
-      "id": 44
+      "boxId": 1,
+      "id": 10
     }
   ]
 }
