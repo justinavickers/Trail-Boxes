@@ -1,3 +1,3 @@
 export default {
-  remoteURL: "http://localhost:3003"
+  remoteURL: "https://trail-boxes-api.herokuapp.com"
 }
