@@ -111,6 +111,24 @@ class ApplicationViews extends Component {
         />
         <Route
           exact
+          path="/"
+          render={props => {
+            return (
+              <BoxList
+                items={this.state.items}
+                boxes={this.state.boxes}
+                addBoxes={this.addBoxes}
+                deleteItem={this.deleteItem}
+                deleteBoxes={this.deleteBoxes}
+                updateBoxes={this.updateBoxes}
+                users={this.state.users}
+                {...props}
+              />
+            );
+          }}
+        />
+        <Route
+          exact
           path="/boxes/new"
           render={props => {
             return (
