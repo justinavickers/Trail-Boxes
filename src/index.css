@@ -17,6 +17,10 @@ body {
   padding: 50px
 }
 
+label {
+  color: white;
+}
+
 .form-group {
   margin: 0px;
   padding: 0px;
