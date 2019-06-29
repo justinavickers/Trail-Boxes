@@ -49,7 +49,7 @@ export default class Register extends Component {
   render() {
     return (
       <form className="registerForm">
-        <h1 className="h3 mb-3 font-weight-normal">Register</h1>
+        <h1 id="register" className="h3 mb-3 font-weight-bold">Register</h1>
         <label htmlFor="inputUsername"></label>
         <input className="registerInput"
           onChange={this.handleFieldChange}

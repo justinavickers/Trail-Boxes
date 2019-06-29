@@ -37,8 +37,9 @@ export default class Login extends Component {
   render() {
     return (
       <form className="loginForm">
-        <h1 className="h3 mb-3 font-weight-normal">Please Sign In</h1>
+        <h1 id="login" className="h3 mb-3 font-weight-bold">Please Sign In</h1>
         <label htmlFor="inputUsername"></label>
+        <div class="loginContainer">
         <input className="loginInput"
           onChange={this.handleFieldChange}
           type="username"
@@ -55,6 +56,7 @@ export default class Login extends Component {
           placeholder={`Password`}
           required=""
         />
+        </div>
         <button type="submit" className="btnNav" onClick={this.handleLogin}>
           Sign in
         </button>
